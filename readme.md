@@ -1,11 +1,11 @@
 # Project Setup
 
-[![Production Workflow](https://github.com/tlr24/IS601-docker-flask/actions/workflows/prod.yml/badge.svg)](https://github.com/kaw393939/docker_flask/actions/workflows/prod.yml)
+[![Production Workflow](https://github.com/tlr24/IS601-docker-flask/actions/workflows/prod.yml/badge.svg)](https://github.com/tlr24/IS601-docker-flask/actions/workflows/prod.yml)
 
 * [Production Deployment](https://tlr24-prod.herokuapp.com/)
 
 
-[![Development Workflow](https://github.com/tlr24/IS601-docker-flask/actions/workflows/dev.yml/badge.svg)](https://github.com/kaw393939/docker_flask/actions/workflows/dev.yml)
+[![Development Workflow](https://github.com/tlr24/IS601-docker-flask/actions/workflows/dev.yml/badge.svg)](https://github.com/tlr24/IS601-docker-flask/actions/workflows/dev.yml)
 
 * [Developmental Deployment](https://tlr24-dev.herokuapp.com/)
 
