@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% block content %}
+    <b>Git</b>
+    <small>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    Git is an open source version control system used to manage files for projects. It is often used in
+                    software/web development when working in groups as it tracks changes made to code and makes it
+                    easier
+                    for multiple people in a team to update the code of the same program.
+                </p>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Repositories</li>
+                    <li>Branches</li>
+                    <li>Commits</li>
+                    <li>Tags</li>
+                    <li>Merge</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <p>
+                    <p>REPOSITORY</p>
+                    A repository is a collection of files in which git keeps track of the changes. The changes
+                    are saved into
+                    a hidden directory named .git within the repository. To initialize a git repository, you must first
+                    install git,
+                    open up a terminal in the folder you want the repository to be created, and enter the command <code>git
+                    init</code>.
+                    </p>
+                </div>
+                <div class="col">
+                    <p></p>
+                    <p>
+                        Click below to get started on the git website:
+                    <p><a href="https://git-scm.com/" class="btn btn-lg fw-bold border-white bg-white">Go To Git</a></p>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Git repositories are stored locally on a developer's computer but can also be pushed up to be
+                    stored remotely on <a href="https://github.com/">github.com</a> where the rest of the development
+                    team can see, pull, and push
+                    code
+                    to it.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                    <p>BRANCH</p>
+                    Within a repository, there are branches. A branch is a version of the main repository code. When
+                    creating
+                    a repository, the first branch that is initialized is the master (or sometimes called main) branch.
+                    The master branch is main version of the repository code. When a developer wants to work on a new
+                    feature
+                    on the project, they will create a branch off of the master branch and start their work there. This
+                    can be done
+                    using the <code>git checkout -b &lt;branch&gt;</code> command where the developer is in the master
+                    branch and &lt;branch&gt; is
+                    the name of the new branch. A new branch will automatically be created with the master code in it.
+                    <br><br>
+                    <p>
+                        Using branches is extremely useful when adding new features to a project as it allows the master
+                        branch
+                        to continue having the most stable, working version of the code while developers can create
+                        their own branches
+                        to work on new features without messing up the original working code base.
+                    </p>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                    <p>COMMIT</p>
+                    A commit is a set of changes made to the repository that captures its state at the time of the
+                    commit.
+                    When changes are made to a repository, a developer must make a commit on the branch to capture the
+                    changes made for the current version of the code. As a version control system, git doesn't make
+                    copies of all the code everytime a new version is made but
+                    rather keeps track of the changes made through commits. The current version of a branch is
+                    determined by
+                    playing back all the commits or changes made to the code until it reaches its current state.
+                    </p>
+                    <p>
+                        Commits can be made by using the command <code>git commit -m "&lt;message&gt;"</code> where &lt;message&gt;
+                        is a short and descriptive message of what work was done in the commit.
+                    </p>
+                    <p>
+                        Commits can be pushed up to GitHub using the command <code>git push origin
+                        &lt;branch-name&gt;</code> where origin
+                        denotes the GitHub repository URL set as the remote and &lt;branch-name&gt; is the name of the
+                        branch the commits are being pushed to.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                    <p>TAGS</p>
+                    Tags are references to specific points in the git history of the repository. They are often
+                    used to denote versions of the project in a git repository. Tags mark the state of the code at a
+                    specific commit with a label that the developer assigns. Tags can be assigned using the command
+                    <code>git tag &lt;tagname&gt;</code> where &lt;tagname&gt; is the name assigned to the tag.
+                    </p>
+                    <p>An example of a tag denoting a project's version is <code>v1.0.2</code> where the v means
+                        version, the 1 denotes the overall version number, the 0 denotes the feature version, and the 2
+                        denotes patches in the version.</p>
+                </div>
+            </div>
+            <p class="row">
+            <p class="col">
+            <p>MERGE</p>
+            <p>
+                When a developer finishes their work on a feature in their own branch, they need to merge it to the
+                master branch. Merging takes the code of one branch and puts it together with another branch
+                (typically the master branch) and creates a new commit where the changes from the one branch is
+                added onto the other branch to make a completely new commit.
+            </p>
+            <p>
+                This is usually done when merging a feature branch into the master branch. The workflow process
+                of adding a new feature and merging it to the master branch works as described below.
+            </p>
+            <p>
+            <ol type="1">
+                <li>You start off with the master branch where the code works</li>
+                <li>You make a new branch from the master to work on the new feature</li>
+                <li>You make commits and finish the work in the feature branch</li>
+                <li>You push the feature branch up to GitHub</li>
+                <li>You go to the repository on GitHub and create a pull request to merge the feature branch into
+                    the master branch
+                </li>
+                <li>You review the code and press merge</li>
+            </ol>
+            </p>
+            <p>
+                Now your feature branch code will be merged into the master branch with a commit.
+            </p>
+            <p>
+                Another important step to note when working on a feature branch is to make sure that when the master
+                branch is updated that the developer working on the feature branch pulls the changes from the master
+                branch by rebasing the remote master branch into the feature branch locally. (A rebase from the master
+                branch should always be done before step 4 above.) This slides the changes
+                from the remote master branch into the feature branch without a commit and make sure that there are no
+                merge conflicts when merging later on. This way, the feature branch will always be up-to-date with the
+                master branch, allowing it to merge up cleanly without any mismatches and not mess up anything in the
+                master branch.
+            </p>
+        </div>
+        </div>
+        </div>
+    </small>
+{% endblock %}
