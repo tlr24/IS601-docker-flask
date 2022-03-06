@@ -5,74 +5,92 @@
         <div class="row">
             <div class="col-8">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna
-                    aliqua. Elit ut aliquam purus sit. Convallis a cras semper auctor neque vitae tempus quam
-                    pellentesque.
-                    Suspendisse
-                    interdum consectetur libero id faucibus.
+                    Docker is an open source containerization platform that allows developers to build multi-container
+                    apps to deploy in any cloud environment.
                 </p>
             </div>
             <div class="col">
-                Column
+                <ul>
+                    <li>Containers</li>
+                    <li>Images</li>
+                    <li>Commands</li>
+                    <li>Starting the project</li>
+                    <li>Link to project repo</li>
+                </ul>
             </div>
             <div class="row">
                 <div class="col-8">
                     <p>
-                        Vestibulum morbi blandit cursus risus at ultrices mi tempus. Enim ut sem viverra aliquet eget
-                        sit
-                        amet
-                        tellus cras.
-                        Tortor id aliquet lectus proin. Ac auctor augue mauris augue neque. In dictum non consectetur a
-                        erat.
-                        Ornare lectus
-                        sit amet est placerat in egestas. Non sodales neque sodales ut etiam. Nec dui nunc mattis enim
-                        ut
-                        tellus.
+                    <p>CONTAINERS</p>
+                    2. Docker - Explain containers, images, link to the project repository on docker hub, explain all
+                    the docker commands that you know. Explain how to start the project and how to access the container
+                    with the terminal using just terminal commands and not PyCharm
                     </p>
                 </div>
                 <div class="col">
+                    <p></p>
                     <p>
-                        Est velit egestas dui id. Faucibus turpis in eu mi bibendum neque egestas congue. Amet facilisis
-                        magna
-                        etiam tempor
-                        orci eu.
+                        Click below to get started on the Docker website:
+                    <p><a href="https://www.docker.com/get-started" class="btn btn-lg fw-bold border-white bg-white">Go
+                        To Docker</a></p>
                     </p>
                 </div>
             </div>
             <div class="row">
                 <p>
-                    Tellus molestie nunc
-                    non
-                    blandit
-                    massa enim nec dui. A diam maecenas sed enim ut. Netus et malesuada fames ac. Eget est lorem ipsum
-                    dolor
-                    sit.
+                <p>IMAGES</p>
+                Vestibulum morbi blandit cursus risus at ultrices mi tempus. Enim ut sem viverra aliquet eget
+                sit
+                amet
+                tellus cras.
+                Tortor id aliquet lectus proin. Ac auctor augue mauris augue neque. In dictum non consectetur a
+                erat.
+                Ornare lectus
+                sit amet est placerat in egestas. Non sodales neque sodales ut etiam. Nec dui nunc mattis enim
+                ut
+                tellus.
+                </p>
+            </div>
+            <div class="row">
+                <p>COMMANDS</p>
+                <p>
+                    <b>docker ps</b> - lists all the running containers<br>
+                    <strong>docker kill &lt;container-id&gt;</strong> - shuts off the container with the specified &lt;container-id&gt;<br>
+                    <b>docker rm &lt;container-id&gt;</b> - deletes the container with the specified &lt;container-id&gt;<br>
+                    <strong>docker compose up</strong> - Builds, (re)creates, starts, and attaches to containers for a
+                    service<br>
+                    <strong>docker compose down</strong> - Stops containers and removes containers, networks, volumes,
+                    and images created by up<br>
+                    <b>docker build -t &lt;container&gt; .</b> - Builds a container image with the specified &lt;container&gt;
+                    image<br>
+                    <b>docker run -dp 80:80 &lt;container&gt;</b> - Runs the container in the background at the
+                    specified port numbers (80:80 in this case)<br>
+                    <b>docker commit --change='CMD apachectl -DFOREGROUND' -c "EXPOSE 80" &lt;container-id&gt;
+                        talaar/first-website:latest</b> - Makes a commit to a container with a new image, updating
+                    either the container's files or settings that were changed. In this case, the --change option adds a
+                    command (CMD) to run when running the image.<br>
+                    <b>docker images</b> - Lists all the images<br>
+                    <b>docker push talaar/first-website:latest</b> - Pushes the container to Docker hub<br>
+                    <b>docker pull talaar/first-website:latest</b> - Pulls the image from Docker hub onto your
+                    computer<br>
+                    <b>docker login</b> - Allows you to login with your Docker Hub username and password to push to your
+                    repository<br>
+                    Runs the container in the background at the<br>
                 </p>
             </div>
             <div class="row">
                 <p>
-                    Sit amet nulla facilisi morbi tempus. Turpis massa sed elementum tempus egestas. Pretium lectus quam
-                    id
-                    leo in vitae
-                    turpis massa sed. Sit amet consectetur adipiscing elit. Amet facilisis magna etiam tempor orci eu
-                    lobortis
-                    elementum.
+                <p>STARTING THE PROJECT</p>
+                Sit amet nulla facilisi morbi tempus. Turpis massa sed elementum tempus egestas. Pretium lectus quam
+                id
+                leo in vitae
+                turpis massa sed. Sit amet consectetur adipiscing elit. Amet facilisis magna etiam tempor orci eu
+                lobortis
+                elementum.
                 </p>
-            </div>
-            <div class="row">
                 <p>
-                    Vitae aliquet nec ullamcorper sit amet. Pretium lectus quam id leo in vitae turpis massa. Leo in
-                    vitae
-                    turpis massa.
-                    Turpis cursus in hac habitasse platea. Posuere lorem ipsum dolor sit amet consectetur adipiscing.
-                    Nec
-                    dui nunc
-                    mattis enim ut tellus. Odio tempor orci dapibus ultrices in iaculis. Purus viverra accumsan in nisl
-                    nisi
-                    scelerisque
-                    eu ultrices vitae.
+                <p>LINK TO THE PROJECT REPO</p>
+                <a href="https://hub.docker.com/repository/docker/talaar/is601-flask">DockerHub Repo</a>
                 </p>
             </div>
         </div>
