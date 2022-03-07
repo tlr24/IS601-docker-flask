@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+{% block content %}
+    <b>Python / Flask</b>
+    <small>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    Flask is an application framework written in the Python programming language.<br><br>
+                    Learn more about Flask <a href="https://flask.palletsprojects.com/en/2.0.x/">here</a>.
+                </p>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Pytest</li>
+                    <li>Simple Pages</li>
+                    <li>Blueprint</li>
+                    <li>Project Outline</li>
+                    <li>Helpful Links</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <p>PYTEST</p>
+                    <p>
+                        Pytest is a framework used when writing applications in python to write tests for the functions
+                        in the program. When writing or adding code to a project, it is good practice to write a small
+                        test for every small piece of code written. In general, it is good practice to write small,
+                        reusable pieces of code that are easy to understand and serve only one purpose. This also cuts
+                        down on the repetition in the code.
+                    </p>
+                </div>
+                <div class="col">
+                    <p>LINKS</p>
+                    <a href="https://flask.palletsprojects.com/en/2.0.x/">Flask Documentation</a><br>
+                    <a href="https://github.com/pallets/flask">Flask Github</a><br>
+                    <a href="https://flask.palletsprojects.com/en/2.0.x/blueprints/">Flask Blueprints Documentation</a><br>
+                    <a href="https://docs.pytest.org/en/7.0.x/">Flask Pytest Documentation</a><br>
+                    <a href="https://github.com/tlr24/IS601-docker-flask">Project Github</a><br>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Writing a test for every function in the code allows the developer to make sure that everything
+                    works as expected. If a part of the code in the application stops working for whatever reason, the
+                    pytest will make it easier to track down where in the code there may be issues. This cuts down on
+                    the time developers spend hunting down the issues in an application. One of the reasons an
+                    application may break is because a library it was using was updated and changed the way it worked.
+                    Another may be that there was code added to the program that does not work with some other part of
+                    the application.
+                </p>
+            </div>
+            <div class="row">
+                <p>EXAMPLES</p>
+                <p>
+                    Some examples of using pytest in the project are found in <a
+                        href=”https://github.com/tlr24/IS601-docker-flask/blob/master/tests/simple_pages_test.py”>simple_pages_test.py</a>.
+                </p>
+                <p>
+                    One example is our <code>test_request_main_menu_links()</code> function on line 3.<br><br>
+                    <!--SCREENSHOT HERE-->
+                </p>
+                <p>
+                    <code>test_request_main_menu_links()</code> tests whether our main menu links appear on the index
+                    page. It first calls the index page on line 5. Then it asserts that it was able to receive the page
+                    with a 200 OK status code on line 6. Lastly, it asserts that a nav-link object to all the pages in
+                    the navigation bar are found in the content of the page.<br><br>
+                    When running the <code>pytest</code> command in the terminal, if the test passes, the developer
+                    knows that the navigation links are appearing as expected. If the test fails, then the developer
+                    knows that the navigation links are appearing as expected.
+                </p>
+                <p>
+                    Another example is our <code>test_request_page_not_found()</code> function.<br><br>
+                    <!--SCREENSHOT HERE-->
+                </p>
+                <p>
+                    <code>test_request_page_not_found()</code> tests whether we get a 404 page not found error when
+                    trying to access a page that does not exist. It first calls /page5 on line 51. Our program does not
+                    have a page5, so it then asserts on line 52 that we received the status code of 404 (page not found)
+                    to confirm that the page does not exist.
+                </p>
+                <p>
+                    One last example is our <code>test_request_docker_page()</code> function.<br><br>
+                    <!--SCREENSHOT HERE-->
+                </p>
+                <p>
+                    <code>test_request_docker_page()</code> tests whether we get the content of our Docker page when
+                    navigating to it. It first calls the docker page on line 33. Then it asserts that our status code is
+                    200 OK on line 34 to confirm that we were able to receive it. Lastly, we assert that the content we
+                    received in the response data includes some of the content we know is in docker.html. This lets the
+                    developer know when trying to access our docker page, we actually get the docker page we created.
+                </p>
+                <p>
+                    Pytest Documentation: <a
+                        href="https://docs.pytest.org/en/7.0.x/">https://docs.pytest.org/en/7.0.x/</a>
+
+                </p>
+            </div>
+            <div class="row">
+                <p>SIMPLE PAGES</p>
+                <p>
+                    In our testing examples above, we were testing a module we created called simple pages. Simple pages
+                    allows us to easily add in our html pages into the simple pages templates folder and be able to see
+                    it on our site right away.
+                </p>
+                <p>
+                    To see how we created simple pages, we have to look at our <a
+                        href=”https://github.com/tlr24/IS601-docker-flask/blob/master/app/simple_pages/__init__.py”>__init__.py</a>
+                    file in our simple_pages directory.<br><br>
+                    <!--SCREENSHOT HERE-->
+                </p>
+                <p>
+                    Simple pages eliminates the need to create a controller for every page we add by using a feature in
+                    Flask called a Blueprint. A Blueprint is a package of controllers. To start, we imported Blueprints
+                    from Flask on line 1. Next, we created the simple_pages Blueprint on line 4 and told it to gather
+                    the templates for simple_pages from the templates folder we created in our simple_pages module
+                    directory.<br><br>
+                    <!--SCREENSHOT OF SIMPLE_PAGES DIRECTORY HERE(?)-->
+                </p>
+                <p>
+
+                    We then start defining our routes for our pages using the route decorators on lines 8 and 9.
+                    Creating routes lets us define what the user will see when we redirect them to certain URLs to send
+                    them to our different pages. On line 8, we set our default route to go to the index page. On line 8,
+                    we set our page variable used in the <code>show()</code> function on line 10 to be set as our route.
+                    The <code>show()</code> function takes in the name of the page that we will use for our route and
+                    attempts to render the page from the templates folder with the name of page.html. If the html file
+                    of the page isn’t found in the templates folder, it aborts with a 404 error.
+                </p>
+                <p>
+                    The <code>show()</code> function acts as the controller for each page in the templates folder.
+                    Simple pages allows us to have a simple controller function instead of having multiple controller
+                    scripts that can load each of the html files in the templates folder.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>PROJECT OUTLINE</p>
+                    <p>
+                    <ul>
+                        <li>Project Root Folder ← Root of the project</li>
+                        <ul>
+                            <li>.github/workflows folder ← Contains yml files for production and development workflows
+                                in github actions
+                            </li>
+                            <ul>
+                                <li>dev.yml ← Defines development workflow that runs in github actions to run pytest and
+                                    deploy to the dev app in heroku when merging a pull request to the master branch
+                                </li>
+                                <li>prod.yml ← Defines production workflow that runs in github actions to run pytest,
+                                    build the container and upload it to docker hub, and deploy it to the prod app in
+                                    heroku when pushing to the master branch
+                                </li>
+                            </ul>
+                            <li>app folder ← Contains all the content to run the application</li>
+                            <ul>
+                                <li>simple_pages folder ← Folder for the simple_pages module including the dunder init
+                                    file
+                                    to define the module and the templates folder that contains the html pages that the
+                                    module uses
+                                </li>
+                                <ul>
+                                    <li>templates folder ← Contains all the html pages used by the simple_pages
+                                        module
+                                    </li>
+                                    <ul>
+                                        <li>about.html ← About page template</li>
+                                        <li>CICD.html ← CI/CD page template</li>
+                                        <li>docker.html ← Docker page template</li>
+                                        <li>flask.html ← Flask page template</li>
+                                        <li>git.html ← Git page template</li>
+                                        <li>index.html ← Home page template</li>
+                                    </ul>
+                                    <li>__init__.py ← Contains the simple_pages blueprint with the controller for each
+                                        page
+                                        in
+                                        the templates folder
+                                    </li>
+                                </ul>
+                                <li>static folder ← Contains static content to use on the html templates</li>
+                                <ul>
+                                    <li>css folder ← Folder contains CSS style sheets for the templates</li>
+                                    <ul>
+                                        <li>style.css ← CSS style sheet used on templates</li>
+                                    </ul>
+                                    <li>images folder ← Folder contains images used on the templates</li>
+                                    <ul>
+                                        <li>sample.jpeg ← Sample jpeg image used on index page</li>
+                                    </ul>
+                                    <li>js folder ← Folder contains javascript code used in the templates</li>
+                                    <ul>
+                                        <li>scripts.js ← Javascript file</li>
+                                    </ul>
+                                </ul>
+                                <li>templates ← Contains html templates for the site</li>
+                                <ul>
+                                    <li>base.html ← Base html template that contains the nav bar and is extended into
+                                        all
+                                        the other html templates so they all have a consistent nav bar
+                                    </li>
+                                </ul>
+                                <li>__init__.py ← Contains method to create the flask application, registering the
+                                    blueprint
+                                    while doing so
+                                </li>
+                                <li>run.py ← Runs the create_app() method from __init__.py to create the flask
+                                    application
+                                </li>
+                            </ul>
+                            <li>calculator folder ← Contains the code for the calculator</li>
+                            <ul>
+                                <li>__init__.py ← Code defining the calculator class with its calculations and get
+                                    results
+                                    methods
+                                </li>
+                            </ul>
+                            <li>tests folder ← Contains the test files that pytest runs to test the code for the
+                                application
+                            </li>
+                            <ul>
+                                <li>__init__.py ← Initializes the tests module</li>
+                                <li>calculator_test.py ← Contains tests for the calculator code</li>
+                                <li>conftest.py ← Contains test for the flask application configuration</li>
+                                <li>simple_pages_test.py ← Contains tests for the simple pages module which creates the
+                                    content pages for the site
+                                </li>
+                            </ul>
+                            <li>.coveragearc ← Config file for coverage</li>
+                            <li>.dockerignore ← Excludes the .git directory from the Docker image</li>
+                            <li>.gitignore ← ignores some of the cache, history, coverage, and db files and directories
+                                from being pushed to git
+                            </li>
+                            <li>.pylintrc ← Config file for pylint</li>
+                            <li>Dockerfile ← File used to create an image to run in a container that runs the program
+                            </li>
+                            <li>docker-compose.yml ← Orchestration file that contains the configuration to develop
+                                locally, it overrides the Dockerfile to run the flask development server instead of
+                                running the gunicorn server that is used for hosting on Heroku
+                            </li>
+                            <li>heroku.yml ← Builds the Docker image for deployment to Heroku</li>
+                            <li>pytest.ini ← Config file for pytest to look for tests in the tests folder</li>
+                            <li>readme.md ← Markdown file used in git to tell more about the project</li>
+                            <li>requirements.txt ← Lists all the dependencies needed to be downloaded in order for
+                                the
+                                application to run in the container
+                            </li>
+                            <li>setup.py ← Config file for pytest</li>
+                        </ul>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </small>
+{% endblock %}
