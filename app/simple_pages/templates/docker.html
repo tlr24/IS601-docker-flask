@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+    <b>Docker</b>
+    <small>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    Docker is an open source containerization platform that allows developers to build multi-container
+                    apps to deploy in any cloud environment.
+                </p>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Containers</li>
+                    <li>Images</li>
+                    <li>Commands</li>
+                    <li>Starting the project</li>
+                    <li>Link to project repo</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-8">
+
+                    <p>CONTAINERS</p>
+                    <p>
+                        A container is a package of all the code and dependencies used to run an application on any
+                        computing environment. Containers virtualize the OS of a development environment to run the
+                        application. Unlike with virtual machines, containers virtualize the operating system for the
+                        application rather than virtualizing the hardware.
+                    </p>
+                    <p>
+                        When building a container, Docker is running an image that the developer creates of the
+                        application. Containers make it easy to run an application reliably in any cloud environment.
+                    </p>
+                    <br><br>
+                    <p>Click <a href="https://www.docker.com/resources/what-container">here</a> to learn more about
+                        containers.</p>
+
+                </div>
+                <div class="col">
+                    <p></p>
+                    <p>
+                        Click below to get started on the Docker website:
+                    <p><a href="https://www.docker.com/get-started" class="btn btn-lg fw-bold border-white bg-white">Go
+                        To Docker</a></p>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                    <p>IMAGES</p>
+                    An image is a snapshot of an application, its dependencies, and the operating system it runs on.
+                    A Dockerfile is a file that contains the code that tells Docker how to build an image. Images are
+                    used to build and run containers that run the application and can be deployed on the cloud. Images
+                    can be pushed and pulled from a Docker registry such as Docker Hub to easily build containers and
+                    run them in any deployment environment.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <p>COMMANDS</p>
+                <p>
+                    <b>docker ps</b> - lists all the running containers<br>
+                    <strong>docker kill &lt;container-id&gt;</strong> - shuts off the container with the specified &lt;container-id&gt;<br>
+                    <b>docker rm &lt;container-id&gt;</b> - deletes the container with the specified &lt;container-id&gt;<br>
+                    <strong>docker compose up</strong> - Builds, (re)creates, starts, and attaches to containers for a
+                    service<br>
+                    <strong>docker compose down</strong> - Stops containers and removes containers, networks, volumes,
+                    and images created by up<br>
+                    <b>docker build -t &lt;container&gt; .</b> - Builds a container image with the specified &lt;container&gt;
+                    image<br>
+                    <b>docker run -dp 80:80 &lt;container&gt;</b> - Runs the container in the background at the
+                    specified port numbers (80:80 in this case)<br>
+                    <b>docker commit --change='CMD apachectl -DFOREGROUND' -c "EXPOSE 80" &lt;container-id&gt;
+                        talaar/first-website:latest</b> - Makes a commit to a container with a new image, updating
+                    either the container's files or settings that were changed. In this case, the --change option adds a
+                    command (CMD) to run when running the image.<br>
+                    <b>docker images</b> - Lists all the images<br>
+                    <b>docker push talaar/first-website:latest</b> - Pushes the container to Docker hub<br>
+                    <b>docker pull talaar/first-website:latest</b> - Pulls the image from Docker hub onto your
+                    computer<br>
+                    <b>docker login</b> - Allows you to login with your Docker Hub username and password to push to your
+                    repository<br>
+                </p>
+            </div>
+            <div class="row">
+                <p>STARTING THE PROJECT</p>
+                <div class="col">
+                    To start the project, you first need to download Docker.
+                    <p>
+                    You can get started with downloading Docker <a href="https://docs.docker.com/get-started/">here</a>.
+                    </p>
+                    Once Docker is downloaded, open a terminal.<br>
+                    The first thing to do is to pull the image of the project from the Docker Hub repo.<br>
+                    To do this, enter the following command into the terminal: <code>docker pull talaar/is601-flask:master</code>.<br><br>
+                    Then, run <code>docker run -dp 80:5000 talaar/is601-flask:master</code>.<br>
+                    This will use the project's image to build and run the container.<br><br>
+                    To see the container running, you can enter the <code>docker ps</code> command into the terminal to see the running container listed.<br>
+                    To see the project running, you can type in <code>localhost</code> into a tab on your browser.<br><br>
+                    To stop the container, type <code>docker ps</code> into the terminal, copy the container id of the running container, and then enter the command <code>docker kill &lt;container-id&gt;</code>.<br>
+                    If you type in <code>docker ps</code> after stopping the container, you should see that no containers are running.<br><br>
+                </div>
+            </div>
+            <div class="row">
+                <p>LINK TO THE PROJECT REPO</p>
+                <p>Click below to see the Docker Hub repo for this project:</p>
+                <p><a href="https://hub.docker.com/repository/docker/talaar/is601-flask">DockerHub Repo</a></p><br><br>
+            </div>
+            <div class="row">
+                <p>HELPFUL LINKS</p>
+                <a href="https://docs.docker.com/get-started/">Docker Getting Started</a>
+                <a href="https://hub.docker.com/">Docker Hub</a><br><br>
+            </div>
+        </div>
+    </small>
+{% endblock %}
