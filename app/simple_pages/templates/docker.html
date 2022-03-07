@@ -20,12 +20,22 @@
             </div>
             <div class="row">
                 <div class="col-8">
-                    <p>
+
                     <p>CONTAINERS</p>
-                    2. Docker - Explain containers, images, link to the project repository on docker hub, explain all
-                    the docker commands that you know. Explain how to start the project and how to access the container
-                    with the terminal using just terminal commands and not PyCharm
+                    <p>
+                        A container is a package of all the code and dependencies used to run an application on any
+                        computing environment. Containers virtualize the OS of a development environment to run the
+                        application. Unlike with virtual machines, containers virtualize the operating system for the
+                        application rather than virtualizing the hardware.
                     </p>
+                    <p>
+                        When building a container, Docker is running an image that the developer creates of the
+                        application. Containers make it easy to run an application reliably in any cloud environment.
+                    </p>
+                    <br><br>
+                    <p>Click <a href="https://www.docker.com/resources/what-container">here</a> to learn more about
+                        containers.</p>
+
                 </div>
                 <div class="col">
                     <p></p>
@@ -37,19 +47,16 @@
                 </div>
             </div>
             <div class="row">
-                <p>
-                <p>IMAGES</p>
-                Vestibulum morbi blandit cursus risus at ultrices mi tempus. Enim ut sem viverra aliquet eget
-                sit
-                amet
-                tellus cras.
-                Tortor id aliquet lectus proin. Ac auctor augue mauris augue neque. In dictum non consectetur a
-                erat.
-                Ornare lectus
-                sit amet est placerat in egestas. Non sodales neque sodales ut etiam. Nec dui nunc mattis enim
-                ut
-                tellus.
-                </p>
+                <div class="col">
+                    <p>
+                    <p>IMAGES</p>
+                    An image is a snapshot of an application, its dependencies, and the operating system it runs on.
+                    A Dockerfile is a file that contains the code that tells Docker how to build an image. Images are
+                    used to build and run containers that run the application and can be deployed on the cloud. Images
+                    can be pushed and pulled from a Docker registry such as Docker Hub to easily build containers and
+                    run them in any deployment environment.
+                    </p>
+                </div>
             </div>
             <div class="row">
                 <p>COMMANDS</p>
@@ -75,23 +82,35 @@
                     computer<br>
                     <b>docker login</b> - Allows you to login with your Docker Hub username and password to push to your
                     repository<br>
-                    Runs the container in the background at the<br>
                 </p>
             </div>
             <div class="row">
-                <p>
                 <p>STARTING THE PROJECT</p>
-                Sit amet nulla facilisi morbi tempus. Turpis massa sed elementum tempus egestas. Pretium lectus quam
-                id
-                leo in vitae
-                turpis massa sed. Sit amet consectetur adipiscing elit. Amet facilisis magna etiam tempor orci eu
-                lobortis
-                elementum.
-                </p>
-                <p>
+                <div class="col">
+                    To start the project, you first need to download Docker.
+                    <p>
+                    You can get started with downloading Docker <a href="https://docs.docker.com/get-started/">here</a>.
+                    </p>
+                    Once Docker is downloaded, open a terminal.<br>
+                    The first thing to do is to pull the image of the project from the Docker Hub repo.<br>
+                    To do this, enter the following command into the terminal: <code>docker pull talaar/is601-flask:master</code>.<br><br>
+                    Then, run <code>docker run -dp 80:5000 talaar/is601-flask:master</code>.<br>
+                    This will use the project's image to build and run the container.<br><br>
+                    To see the container running, you can enter the <code>docker ps</code> command into the terminal to see the running container listed.<br>
+                    To see the project running, you can type in <code>localhost</code> into a tab on your browser.<br><br>
+                    To stop the container, type <code>docker ps</code> into the terminal, copy the container id of the running container, and then enter the command <code>docker kill &lt;container-id&gt;</code>.<br>
+                    If you type in <code>docker ps</code> after stopping the container, you should see that no containers are running.<br><br>
+                </div>
+            </div>
+            <div class="row">
                 <p>LINK TO THE PROJECT REPO</p>
-                <a href="https://hub.docker.com/repository/docker/talaar/is601-flask">DockerHub Repo</a>
-                </p>
+                <p>Click below to see the Docker Hub repo for this project:</p>
+                <p><a href="https://hub.docker.com/repository/docker/talaar/is601-flask">DockerHub Repo</a></p><br><br>
+            </div>
+            <div class="row">
+                <p>HELPFUL LINKS</p>
+                <a href="https://docs.docker.com/get-started/">Docker Getting Started</a>
+                <a href="https://hub.docker.com/">Docker Hub</a><br><br>
             </div>
         </div>
     </small>
