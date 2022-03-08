@@ -1,79 +1,161 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 4
+    <b>CI/CD</b>
     <small>
         <div class="row">
             <div class="col-8">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna
-                    aliqua. Elit ut aliquam purus sit. Convallis a cras semper auctor neque vitae tempus quam
-                    pellentesque.
-                    Suspendisse
-                    interdum consectetur libero id faucibus.
+                    Continuous Integration and Continuous Deployment (CI/CD) is an ongoing process in software
+                    development in which “members of a team integrate their work frequently”
+                    (<a href="https://www.martinfowler.com/articles/continuousIntegration.html">martinfowler.com/articles/continuousIntegration.html</a>)
+                    and “build software in such a way
+                    that the software can be released to production at any time”
+                    (<a href="https://www.martinfowler.com/bliki/ContinuousDelivery.html">martinfowler.com/bliki/ContinuousDelivery.html</a>).
                 </p>
             </div>
             <div class="col">
-                Column
+                <ul>
+                    <li>GitHub Actions</li>
+                    <li>Code Review</li>
+                    <li>Production Deployment</li>
+                    <li>Docker Hub Deployment</li>
+                    <li>Work Process</li>
+                </ul>
             </div>
             <div class="row">
                 <div class="col-8">
+                    <p>GITHUB ACTIONS</p>
                     <p>
-                        Vestibulum morbi blandit cursus risus at ultrices mi tempus. Enim ut sem viverra aliquet eget
-                        sit
-                        amet
-                        tellus cras.
-                        Tortor id aliquet lectus proin. Ac auctor augue mauris augue neque. In dictum non consectetur a
-                        erat.
-                        Ornare lectus
-                        sit amet est placerat in egestas. Non sodales neque sodales ut etiam. Nec dui nunc mattis enim
-                        ut
-                        tellus.
+                        Our project is set up to use GitHub Actions where every time a pull request is merged into the
+                        master branch, the development workflow runs and whenever something is pushed to the master
+                        branch the production workflow runs.
                     </p>
                 </div>
                 <div class="col">
+                    <p>LINKS</p>
                     <p>
-                        Est velit egestas dui id. Faucibus turpis in eu mi bibendum neque egestas congue. Amet facilisis
-                        magna
-                        etiam tempor
-                        orci eu.
+                        <a href="https://www.martinfowler.com/articles/continuousIntegration.html">Continuous
+                            Integration</a><br>
+                        <a href="https://www.martinfowler.com/bliki/ContinuousDelivery.html">Continuous Delivery</a><br>
+                        <a href="https://docs.github.com/en/actions">GitHub Actions Documentation</a><br>
                     </p>
                 </div>
             </div>
             <div class="row">
                 <p>
-                    Tellus molestie nunc
-                    non
-                    blandit
-                    massa enim nec dui. A diam maecenas sed enim ut. Netus et malesuada fames ac. Eget est lorem ipsum
-                    dolor
-                    sit.
+                    The production and development workflows are defined in the <a
+                        href="https://github.com/tlr24/IS601-docker-flask/blob/master/.github/workflows/dev.yml">dev.yml</a>
+                    and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/.github/workflows/prod.yml">prod.yml</a>
+                    files in the project’s <a
+                        href="https://github.com/tlr24/IS601-docker-flask/blob/master/.github/workflows">.github/workflows</a>
+                    directory.
+                </p>
+                <p>
+                    The dev.yml file defines 2 jobs that run when a pull request is merged into the master branch:
+                    run_pytest and deploy_heroku. The run_pytest job first runs pytest and checks that the tests of the
+                    code being merged pass. Then, once it passes, it continues to deploy the application to the Heroku
+                    development app through the deploy_heroku job.
+                </p>
+                <p>
+                    The prod.yml file defines 3 jobs that run when something is pushed to the master branch: runtest,
+                    build-container, and deploy. The runtest job runs pytest and checks that all the tests pass. Next,
+                    it builds the container and sends the image to Docker Hub through the build-container job. Lastly,
+                    it deploys the container to the production app in Heroku through the heroku job.
+                </p>
+            </div>
+            <div class="row">
+                <p>CODE REVIEW</p>
+                <p>
+                    Before merging pull requests, you want to look at the tests of the code. With multiple team members
+                    working at the same time, it is important to make sure before merging new features into master that
+                    every new functionality has a passing test written for it.
+                </p>
+                <p>
+                    Once we are sure there is a reasonable amount of testing on the code, we can create the pull
+                    request. Once we create the pull request into the master branch on GitHub, if we have dev.yml
+                    properly set up, we can see that our development workflow will start running. It will first check
+                    that the code passes all the pytest, and then it will deploy the container onto our heroku
+                    development app.
+                </p>
+                <p>
+                    This allows us to test the running application on the development server before we
+                    press merge on the pull request and prompt the production workflow to deploy the newly updated
+                    application to the production app.
                 </p>
             </div>
             <div class="row">
                 <p>
-                    Sit amet nulla facilisi morbi tempus. Turpis massa sed elementum tempus egestas. Pretium lectus quam
-                    id
-                    leo in vitae
-                    turpis massa sed. Sit amet consectetur adipiscing elit. Amet facilisis magna etiam tempor orci eu
-                    lobortis
-                    elementum.
+                    PRODUCTION DEPLOYMENT
+                </p>
+                <p>
+                    Having two separate deployed applications for production and development is important in making sure
+                    the production application is always functioning properly. The most basic precaution to implement
+                    when developing an application is having one copy of the program for development and one copy for
+                    production that always works.
+                </p>
+                <p>
+                    This way we can test that the development application really does work
+                    before merging the code to the master branch and deploying it to the production app.
+                </p>
+                <p>
+                    In our project, once we merge a pull request into the master branch, our production workflow will
+                    run, checking that the code passes the pytests, building the container, sending it to Docker Hub,
+                    and deploying it to the production server now that we know it all works.
                 </p>
             </div>
             <div class="row">
                 <p>
-                    Vitae aliquet nec ullamcorper sit amet. Pretium lectus quam id leo in vitae turpis massa. Leo in
-                    vitae
-                    turpis massa.
-                    Turpis cursus in hac habitasse platea. Posuere lorem ipsum dolor sit amet consectetur adipiscing.
-                    Nec
-                    dui nunc
-                    mattis enim ut tellus. Odio tempor orci dapibus ultrices in iaculis. Purus viverra accumsan in nisl
-                    nisi
-                    scelerisque
-                    eu ultrices vitae.
+                    DOCKER HUB DEPLOYMENT
                 </p>
+                <p>
+                    Once we merge our pull requests into the master branch, it’s important to note that we build a
+                    container of the working project and send the image to Docker Hub after checking our pytests through
+                    the production workflow.
+                </p>
+                <p>
+                    This allows us to have an updated Docker Hub repository with the newest
+                    working image of our production ready project that can be pulled and run as a container in any
+                    deployment environment.
+                </p>
+            </div>
+            <div class="row">
+                <p>
+                    WORK PROCESS
+                </p>
+                <p>
+                    With all the branches and GitHub actions workflows set up, we can look at how a developer can work
+                    in a team to add features to the master branch and have a working production app to show for it.
+                </p>
+                <p>
+                    The process for a developer adding new features to the application is as follows:
+                </p>
+                <div class="col">
+                    <ul>
+                        <ul>
+                            <ol type="1">
+                                <li>You start with pulling from the master branch on GitHub where the code works</li>
+                                <li>Create a new branch</li>
+                                <li>Do work on the new feature in the branch</li>
+                                <li>Make sure you pull from the master branch when it is updated to rebase your work and
+                                    avoid mismatches and merge conflicts
+                                </li>
+                                <li>Push the branch to GitHub (make sure it is up-to-date by following step 4 before
+                                    doing
+                                    so)
+                                </li>
+                                <li>Create a pull request which triggers the development workflow (running pytests,
+                                    deploying to heroku development app)
+                                </li>
+                                <li>Test the application on the heroku development app/li>
+                                <li>Merge the branch into master which will trigger the production workflow (running
+                                    pytests, building/pushing to DockerHub, deploying to heroku production app)
+                                </li>
+                                <li>Rebase your remote master branch into your local master branch</li>
+                            </ol>
+                        </ul>
+                    </ul>
+                </div>
+                <p>This is the ongoing process for CI/CD development that automate processes to be able to work with other people, make less mistakes, and to make sure there is always a running application.</p><br><br><br><br>
             </div>
         </div>
     </small>
