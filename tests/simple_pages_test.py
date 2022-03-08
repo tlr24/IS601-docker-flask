@@ -14,7 +14,7 @@ def test_request_index(client):
     """Tests the index page"""
     response = client.get("/")
     assert response.status_code == 200
-    assert b"Some quick example text" in response.data
+    assert b"Welcome!" in response.data
 
 def test_request_about(client):
     """Tests the about page"""
