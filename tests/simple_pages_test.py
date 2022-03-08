@@ -4,7 +4,6 @@ def test_request_main_menu_links(client):
     """Tests the main menu links in the nav bar"""
     response = client.get("/")
     assert response.status_code == 200
-    assert b'<a class="nav-link" href="/about">About</a>' in response.data
     assert b'<a class="nav-link" href="/git">Git</a>' in response.data
     assert b'<a class="nav-link" href="/docker">Docker</a>' in response.data
     assert b'<a class="nav-link" href="/flask">Flask</a>' in response.data
@@ -15,12 +14,6 @@ def test_request_index(client):
     response = client.get("/")
     assert response.status_code == 200
     assert b"Welcome!" in response.data
-
-def test_request_about(client):
-    """Tests the about page"""
-    response = client.get("/about")
-    assert response.status_code == 200
-    assert b"Lorem ipsum dolor sit amet" in response.data
 
 def test_request_git_page(client):
     """Tests the git page"""
