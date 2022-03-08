@@ -64,16 +64,38 @@
                 </p>
             </div>
             <div class="row">
+                <p>SETUP</p>
+                <p>In order to set up our GitHub Actions workflows, the following steps must be taken:</p>
+                <p>
+                <ul>
+                    <ol type="1">
+                        <li>Create a Heroku account at <a href="https://www.heroku.com">heroku.com</a></li>
+                        <li>Create a production app and a development app on Heroku</li>
+                        <li>Create a repo on Docker Hub</li>
+                        <li>Add DOCKER_USERNAME, DOCKER_PASSWORD, and HEROKU_API_KEY action secrets on the GitHub repo
+                        </li>
+                        <li>Add the dev.yml and prod.yml files to your .github/workflows directory</li>
+                        <li>Update dev.yml and prod.yml to have the correct docker repo, heroku app names, and heroku
+                            email addresses.
+                        </li>
+                    </ol>
+                </ul>
+                </p>
+            </div>
+            <div class="row">
                 <p>CODE REVIEW</p>
                 <p>
-                    Before merging pull requests, you want to look at the tests of the code. With multiple team members
-                    working at the same time, it is important to make sure before merging new features into master that
+                    Before merging pull requests, you want to look at the tests of the code. With multiple team
+                    members
+                    working at the same time, it is important to make sure before merging new features into master
+                    that
                     every new functionality has a passing test written for it.
                 </p>
                 <p>
                     Once we are sure there is a reasonable amount of testing on the code, we can create the pull
                     request. Once we create the pull request into the master branch on GitHub, if we have dev.yml
-                    properly set up, we can see that our development workflow will start running. It will first check
+                    properly set up, we can see that our development workflow will start running. It will first
+                    check
                     that the code passes all the pytest, and then it will deploy the container onto our heroku
                     development app.
                 </p>
@@ -88,9 +110,12 @@
                     PRODUCTION DEPLOYMENT
                 </p>
                 <p>
-                    Having two separate deployed applications for production and development is important in making sure
-                    the production application is always functioning properly. The most basic precaution to implement
-                    when developing an application is having one copy of the program for development and one copy for
+                    Having two separate deployed applications for production and development is important in making
+                    sure
+                    the production application is always functioning properly. The most basic precaution to
+                    implement
+                    when developing an application is having one copy of the program for development and one copy
+                    for
                     production that always works.
                 </p>
                 <p>
@@ -98,8 +123,10 @@
                     before merging the code to the master branch and deploying it to the production app.
                 </p>
                 <p>
-                    In our project, once we merge a pull request into the master branch, our production workflow will
-                    run, checking that the code passes the pytests, building the container, sending it to Docker Hub,
+                    In our project, once we merge a pull request into the master branch, our production workflow
+                    will
+                    run, checking that the code passes the pytests, building the container, sending it to Docker
+                    Hub,
                     and deploying it to the production server now that we know it all works.
                 </p>
             </div>
@@ -109,7 +136,8 @@
                 </p>
                 <p>
                     Once we merge our pull requests into the master branch, it’s important to note that we build a
-                    container of the working project and send the image to Docker Hub after checking our pytests through
+                    container of the working project and send the image to Docker Hub after checking our pytests
+                    through
                     the production workflow.
                 </p>
                 <p>
@@ -123,7 +151,8 @@
                     WORK PROCESS
                 </p>
                 <p>
-                    With all the branches and GitHub actions workflows set up, we can look at how a developer can work
+                    With all the branches and GitHub actions workflows set up, we can look at how a developer can
+                    work
                     in a team to add features to the master branch and have a working production app to show for it.
                 </p>
                 <p>
@@ -133,10 +162,12 @@
                     <ul>
                         <ul>
                             <ol type="1">
-                                <li>You start with pulling from the master branch on GitHub where the code works</li>
+                                <li>You start with pulling from the master branch on GitHub where the code works
+                                </li>
                                 <li>Create a new branch</li>
                                 <li>Do work on the new feature in the branch</li>
-                                <li>Make sure you pull from the master branch when it is updated to rebase your work and
+                                <li>Make sure you pull from the master branch when it is updated to rebase your work
+                                    and
                                     avoid mismatches and merge conflicts
                                 </li>
                                 <li>Push the branch to GitHub (make sure it is up-to-date by following step 4 before
@@ -155,7 +186,9 @@
                         </ul>
                     </ul>
                 </div>
-                <p>This is the ongoing process for CI/CD development that automate processes to be able to work with other people, make less mistakes, and to make sure there is always a running application.</p><br><br><br><br>
+                <p>This is the ongoing process for CI/CD development that automate processes to be able to work with
+                    other people, make less mistakes, and to make sure there is always a running application.</p>
+                <br><br><br><br>
             </div>
         </div>
     </small>

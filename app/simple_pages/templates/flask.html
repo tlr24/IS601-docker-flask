@@ -53,39 +53,45 @@
                 <p>EXAMPLES</p>
                 <p>
                     Some examples of using pytest in the project are found in <a
-                        href=”https://github.com/tlr24/IS601-docker-flask/blob/master/tests/simple_pages_test.py”>simple_pages_test.py</a>.
+                        href="https://github.com/tlr24/IS601-docker-flask/blob/master/tests/simple_pages_test.py">simple_pages_test.py</a>.
                 </p>
                 <p>
                     One example is our <code>test_request_main_menu_links()</code> function on line 3.<br><br>
-                    <!--SCREENSHOT HERE-->
+                    <img src="{{ url_for('static', filename='images/test_request_main_menu_links.png') }}"
+                                              class="w-70"
+                                              alt="test_request_main_menu_links()">
                 </p>
                 <p>
                     <code>test_request_main_menu_links()</code> tests whether our main menu links appear on the index
                     page. It first calls the index page on line 5. Then it asserts that it was able to receive the page
                     with a 200 OK status code on line 6. Lastly, it asserts that a nav-link object to all the pages in
-                    the navigation bar are found in the content of the page.<br><br>
+                    the navigation bar are found in the content of the page (lines 7-10).<br><br>
                     When running the <code>pytest</code> command in the terminal, if the test passes, the developer
                     knows that the navigation links are appearing as expected. If the test fails, then the developer
                     knows that the navigation links are appearing as expected.
                 </p>
                 <p>
                     Another example is our <code>test_request_page_not_found()</code> function.<br><br>
-                    <!--SCREENSHOT HERE-->
+                    <img src="{{ url_for('static', filename='images/test_request_page_not_found.png') }}"
+                                              class="w-95"
+                                              alt="test_request_page_not_found()">
                 </p>
                 <p>
                     <code>test_request_page_not_found()</code> tests whether we get a 404 page not found error when
-                    trying to access a page that does not exist. It first calls /page5 on line 51. Our program does not
-                    have a page5, so it then asserts on line 52 that we received the status code of 404 (page not found)
+                    trying to access a page that does not exist. It first calls /page5 on line 44. Our program does not
+                    have a page5, so it then asserts on line 45 that we received the status code of 404 (page not found)
                     to confirm that the page does not exist.
                 </p>
                 <p>
                     One last example is our <code>test_request_docker_page()</code> function.<br><br>
-                    <!--SCREENSHOT HERE-->
+                    <img src="{{ url_for('static', filename='images/test_request_docker_page.png') }}"
+                                              class="w-95"
+                                              alt="test_request_docker_page()">
                 </p>
                 <p>
                     <code>test_request_docker_page()</code> tests whether we get the content of our Docker page when
-                    navigating to it. It first calls the docker page on line 33. Then it asserts that our status code is
-                    200 OK on line 34 to confirm that we were able to receive it. Lastly, we assert that the content we
+                    navigating to it. It first calls the docker page on line 26. Then it asserts that our status code is
+                    200 OK on line 27 to confirm that we were able to receive it. Lastly, we assert that the content we
                     received in the response data includes some of the content we know is in docker.html. This lets the
                     developer know when trying to access our docker page, we actually get the docker page we created.
                 </p>
@@ -104,9 +110,11 @@
                 </p>
                 <p>
                     To see how we created simple pages, we have to look at our <a
-                        href=”https://github.com/tlr24/IS601-docker-flask/blob/master/app/simple_pages/__init__.py”>__init__.py</a>
+                        href="https://github.com/tlr24/IS601-docker-flask/blob/master/app/simple_pages/__init__.py">__init__.py</a>
                     file in our simple_pages directory.<br><br>
-                    <!--SCREENSHOT HERE-->
+                    <img src="{{ url_for('static', filename='images/simple_pages_init.png') }}"
+                                              class="w-95"
+                                              alt="simple_pages/__init__.py">
                 </p>
                 <p>
                     Simple pages eliminates the need to create a controller for every page we add by using a feature in
@@ -114,7 +122,9 @@
                     from Flask on line 1. Next, we created the simple_pages Blueprint on line 4 and told it to gather
                     the templates for simple_pages from the templates folder we created in our simple_pages module
                     directory.<br><br>
-                    <!--SCREENSHOT OF SIMPLE_PAGES DIRECTORY HERE(?)-->
+                    <img src="{{ url_for('static', filename='images/simple_pages.png') }}"
+                                              class="w-95"
+                                              alt="simple_pages directory">
                 </p>
                 <p>
 
