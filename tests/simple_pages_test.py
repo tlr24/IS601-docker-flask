@@ -8,7 +8,7 @@ def test_request_main_menu_links(client):
     assert b'<a class="nav-link" href="/git">Git</a>' in response.data
     assert b'<a class="nav-link" href="/docker">Docker</a>' in response.data
     assert b'<a class="nav-link" href="/flask">Flask</a>' in response.data
-    assert b'<a class="nav-link" href="/page4">Page 4</a>' in response.data
+    assert b'<a class="nav-link" href="/cicd">CI/CD</a>' in response.data
 
 def test_request_index(client):
     """Tests the index page"""
@@ -40,11 +40,11 @@ def test_request_flask_page(client):
     assert response.status_code == 200
     assert b"Flask" in response.data
 
-def test_request_page4(client):
-    """This makes the index page"""
-    response = client.get("/page4")
+def test_request_cicd_page(client):
+    """Tests the CI/CD page"""
+    response = client.get("/cicd")
     assert response.status_code == 200
-    assert b"Page 4" in response.data
+    assert b"CI/CD" in response.data
 
 def test_request_page_not_found(client):
     """Tests trying to reach non-existing page"""
