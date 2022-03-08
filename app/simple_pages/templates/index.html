@@ -5,16 +5,20 @@
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" class="d-block w-100"
-                             alt="...">
+                        <a href="/git"><img src="{{ url_for('static', filename='images/git.png') }}" class="d-block w-100"
+                             alt="git"></a>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" class="d-block w-100"
-                             alt="...">
+                        <a href="/docker"><img src="{{ url_for('static', filename='images/docker.png') }}" class="d-block w-100"
+                             alt="docker"></a>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" class="d-block w-100"
-                             alt="...">
+                        <a href="/flask"><img src="{{ url_for('static', filename='images/flask.jpg') }}" class="d-block w-100"
+                             alt="flask"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/cicd"><img src="{{ url_for('static', filename='images/cicd.png') }}" class="d-block w-100"
+                             alt="ci/cd"></a>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
