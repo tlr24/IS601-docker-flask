@@ -11,38 +11,38 @@ def clear_history_fixture():
     Calculations.clear_history()
 
 
+def values_tuple():
+    """Arranging data, creating reusable tuple for testing"""
+    return 1, 2
+
+
 def test_add_addition_calculation_to_history():
     """Testing adding a calculation to history"""
-    values = (1, 2)
-    Calculations.add_addition_calculation(values)
+    Calculations.add_addition_calculation(values_tuple())
     assert len(Calculations.history) == 1
 
 
 def test_add_subtraction_calculation_to_history():
     """Testing adding a subtraction calculation to history"""
-    values = (1, 2)
-    Calculations.add_subtraction_calculation(values)
+    Calculations.add_subtraction_calculation(values_tuple())
     assert len(Calculations.history) == 2
 
 
 def test_add_multiplication_calculation_to_history():
     """Testing adding a subtraction calculation to history"""
-    values = (1, 2)
-    Calculations.add_multiplication_calculation(values)
+    Calculations.add_multiplication_calculation(values_tuple())
     assert len(Calculations.history) == 3
 
 
 def test_add_division_calculation_to_history():
     """Testing adding a division calculation to history"""
-    values = (1, 2)
-    Calculations.add_division_calculation(values)
+    Calculations.add_division_calculation(values_tuple())
     assert len(Calculations.history) == 4
 
 
 def test_clear_calculations_history():
     """Testing clearing the calculations history"""
-    values = (1, 2)
-    addition = Addition(values)
+    addition = Addition(values_tuple())
     Calculations.history.append(addition)
     assert len(Calculations.history) == 5
     assert Calculations.clear_history() is True
@@ -50,8 +50,7 @@ def test_clear_calculations_history():
 
 def test_get_calculation():
     """Test getting a calculation from the history"""
-    values = (1, 2)
-    addition = Addition(values)
+    addition = Addition(values_tuple())
     Calculations.history.append(addition)
     assert Calculations.get_calculation(0).get_result() == 3
 
@@ -59,17 +58,15 @@ def test_get_calculation():
 def test_count_calculations(clear_history_fixture):
     """Testing getting a count of the number of calculations in calculation history"""
     # pylint: disable=unused-variable,unused-argument,redefined-outer-name
-    values = (1, 2)
     for i in range(3):
-        Calculations.history.append(Addition(values))
+        Calculations.history.append(Addition(values_tuple()))
     assert Calculations.count_calculations() == 3
 
 
 def test_remove_calculation(clear_history_fixture):
     """Testing removing a specific calculation"""
     # pylint: disable=unused-argument,redefined-outer-name
-    numbers = (1, 1)
-    addition = Addition(numbers)
+    addition = Addition(values_tuple())
     Calculations.history.append(addition)
     assert Calculations.remove_calculation(0) is True
 
