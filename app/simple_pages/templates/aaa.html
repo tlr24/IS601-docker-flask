@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+    <b>AAA Testing</b>
+    <small>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    AAA is a pattern of testing that helps determine whether the functions in a program are working as
+                    expected. <br><br>
+                    To start, AAA stands for Arrange, Act, and Assert.<br><br>
+                </p>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Arrange</li>
+                    <li>Act</li>
+                    <li>Assert</li>
+                    <li>Helpful Links</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p>WHY TEST?</p>
+                <p>
+                    Testing is important because it helps us pinpoint problem areas in our code in development
+                    before deploying problematic code. <br><br>
+                    It also allows us to keep track of where code breaks as APIs
+                    change and new code is added later on.<br><br>
+                    It cuts down the time developers spend hunting down the issues in an application. <br><br><br>
+                </p>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/unit_testing.png') }}"
+                     class="w-30" width="90%"
+                     alt="unit_testing">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    Ultimately, writing a test for every function in the code allows the developer to make sure that
+                    everything
+                    works as expected and is easy to fix if not. <br><br>
+                    Our calculator program includes tests for each function based on the AAA testing pattern discussed below. <br><br><br>
+                    For this article, we will be looking at the <code>add()</code> function, found in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/__init__.py">calculator/__init__.py</a>.
+	                <img src="{{ url_for('static', filename='images/add.png') }}" alt="calculator/__init__.py add()" class="center" style="width:75%;"><br>
+                </p>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">AAA Testing</h5>
+                        <p class="card-text">Click below to learn more about AAA testing!</p>
+                        <a class="btn btn-primary"
+                           href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
+                           role="button">Learn
+                            more!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p>ARRANGE</p>
+                <p>
+                    <b>Arranging</b> is the process of arranging the inputs and targets needed to set up for the test
+                    cases. <br><br>
+                    In order to test the functionality of a basic unit of code, we need to make sure we have the
+                    necessary operations, settings and/or variables set up and prepped.<br><br>
+                    In our example function from the calculator class, the arranging step should look like this:<br><br>
+                    <code>my_tuple = (5, 2)</code><br><br>
+                    Here, we are arranging a tuple for the <code>add()</code> method as it takes in a tuple of
+                    numbers to add. We need to have a tuple of values to add to make sure we can test the
+                    functionality.
+                    <br><br>
+                </p>
+            </div>
+            <div class="col">
+                <br><br>
+                <p>LINKS</p>
+                <a href="https://performancelabus.com/unit-testing-importance/">What is Unit Testing and Why</a><br>
+                <a href="https://github.com/tlr24/IS601-docker-flask">Project Github</a><br>
+            </div>
+        </div>
+
+    </small>
+{% endblock %}
