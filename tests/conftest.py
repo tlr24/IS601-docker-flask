@@ -22,6 +22,6 @@ def client(application):
 
 
 @pytest.fixture()
-def runner(application):
+def runner(application): # pragma: no cover
     """This makes the task runner"""
     return application.test_cli_runner()

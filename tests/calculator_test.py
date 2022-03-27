@@ -2,34 +2,27 @@
 from calculator import Calculator
 
 
-def test_calculator_is_instance():
-    """Testing the Calculator"""
-    calculator = Calculator()
-    assert isinstance(calculator, Calculator)
-
-
-def test_calculator_get_result_method():
-    """Testing the Calculator"""
-    calculator = Calculator()
-    assert calculator.get_result() == 0
-
-
-def test_calculator_result_property():
-    """Testing the Calculator"""
-    calc1 = Calculator()
-    calc2 = Calculator()
-    calc1.result = 5
-    calc2.result = 6
-    assert calc1.result == 5
-    assert calc2.result == 6
-
+def values_tuple():
+    """Creating reusable tuple for testing"""
+    # Arranging data for AAA testing
+    return 5, 2
 
 def test_calculator_add_method():
-    """Testing the Calculator"""
-    calculator = Calculator()
-    assert calculator.add(1) == 1
+    """Testing the Calculator Add method"""
+    # Act for AAA testing
+    result = Calculator.add(values_tuple())
+
+    # Assertion for AAA testing
+    assert result == 7
 
 def test_calculator_subtract_method():
-    """Testing the Calculator Subtract"""
-    calculator = Calculator()
-    assert calculator.subtract(1) == -1
+    """Testing the Calculator Subtract method"""
+    assert Calculator.subtract(values_tuple()) == 3
+
+def test_calculator_multiply_method():
+    """Testing the Calculator Multiply method"""
+    assert Calculator.multiply(values_tuple()) == 10
+
+def test_calculator_divide_method():
+    """Testing the Calculator Divide method"""
+    assert Calculator.divide(values_tuple()) == 2.5
