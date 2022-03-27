@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2><b>AAA Testing</b></h2>
+    <small>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    AAA is a pattern of testing that helps determine whether the functions in a program are working as
+                    expected. <br><br>
+                    To start, AAA stands for <b>Arrange, Act, and Assert</b>.<br><br>
+                </p>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Arrange</li>
+                    <li>Act</li>
+                    <li>Assert</li>
+                    <li>Helpful Links</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>WHY TEST?</b></h4>
+                <p>
+                    Testing is important because it helps us pinpoint problem areas in our code in development
+                    before deploying problematic code. <br><br>
+                    It also allows us to keep track of where code breaks as APIs
+                    change and new code is added later on.<br><br>
+                    It cuts down the time developers spend hunting down the issues in an application. <br><br><br>
+                </p>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/unit_testing.png') }}"
+                     class="w-30" width="90%"
+                     alt="unit_testing">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    Ultimately, writing a test for every function in the code allows the developer to make sure that
+                    everything
+                    works as expected and is easy to fix if not. <br><br>
+                    Our calculator program includes tests for each function based on the AAA testing pattern discussed
+                    below. <br><br><br>
+                    For this article, we will be looking at the <code>add()</code> function, found in <a
+                        href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/__init__.py">calculator/__init__.py</a>.
+                    <img src="{{ url_for('static', filename='images/add.png') }}" alt="calculator/__init__.py add()"
+                         class="center" style="width:75%;"><br>
+                </p>
+                <br><br>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">AAA Testing</h5>
+                        <p class="card-text">Click below to learn more about AAA testing!</p>
+                        <a class="btn btn-primary"
+                           href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
+                           role="button">Learn
+                            more!</a>
+                    </div>
+                </div>
+                <br><br>
+                <div>
+                    <img src="{{ url_for('static', filename='images/unit_testing_clipart.png') }}"
+                         class="w-30" width="90%"
+                         alt="unit_testing_clipart">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>STEP 1: ARRANGE</b></h4>
+                <p>
+                    <b>Arranging</b> is the process of arranging the inputs and targets needed to set up for the test
+                    cases. <br><br>
+                    To test the functionality of a basic unit of code, we need to make sure we have the
+                    necessary operations, settings and/or variables set up and prepped.<br><br>
+                    <br><br>
+                </p>
+            </div>
+            <div class="col">
+                <br><br>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">LINKS</h5>
+                        <p class="card-text">
+                            <a href="https://performancelabus.com/unit-testing-importance/">What is Unit Testing and
+                                Why</a><br>
+                            <a href="https://github.com/tlr24/IS601-docker-flask">Calculator Project Github</a><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                For our example function from the calculator class, the arranging step should look like this:<br><br>
+                <code>values_tuple = (5, 2)</code><br><br>
+                Here, we are arranging a tuple for the <code>add()</code> method as it takes in a tuple of
+                numbers as input for the add functionality. We need to have a tuple of values to add.
+                <br><br><br>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/aaa_testing_chart.png') }}"
+                     class="w-30" width="100%"
+                     alt="aaa_testing_chart">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>STEP 2: ACT</b></h4>
+                The <b>Act</b> stage is where we call the function to be tested. This is the function or method
+                call of the unit of code we are testing. The action is called so we can target whether it is
+                behaving correctly or not in the next step. <br><br>
+                In our example, we would be calling the <code>add()</code> function that we are testing like
+                this:<br><br>
+                <code>result = Calculator.add(values_tuple)</code><br><br>
+                We store our result of the action into a result variable to check if it's what we expect in the next
+                stage.
+                <br><br><br>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>STEP 3: ASSERT</b></h4>
+                Lastly, the <b>Assert</b> stage is where we write an assert statement to make sure we get our expected
+                outcome as a result of our function call. <br><br>
+                The assert function verifies that we received the correct
+                response for the behavior. It lets us determine if the test passes or fails. <br><br><br>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/pass_fail.png') }}"
+                     class="w-30" width="90%"
+                     alt="pass_fail">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                In our example, we would call the following <b>assert</b> statement to make sure that the last
+                calculation result value is 7 as is expected of adding the numbers we fed the function in the arrange
+                stage:<br><br>
+                <code>assert result == 7</code> <br><br><br>
+
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/observe_action.jpg') }}"
+                     class="w-30" width="90%"
+                     alt="observe_action">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                If we run this test (using pylint) we should be able to see if our function passes the test and
+                works as we expect it to. <br><br>
+                This helps us narrow down issues in our code and makes sure that every unit of code in our program
+                functions properly.<br><br><br>
+                Each function in a program should have a test function starting with the name starting with 'test_' in
+                order for us to run pytest and see if our code works as expected.<br><br><br><br>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/unit-testing-circle-chart.jpg') }}"
+                     class="w-30" width="80%"
+                     alt="unit-testing-circle-chart">
+            </div>
+            <br><br>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                You can learn more about pytest here: <a href="https://docs.pytest.org/en/6.2.x/contents.html">https://docs.pytest.org/en/6.2.x/contents.html</a>.<br><br>
+                AAA testing helps us do basic unit testing and feature testing following the behavior-driven development
+                concept of Given-When-Then. <br><br>
+                <br><br><br><br>
+            </div>
+            <div class="col">
+                <br><br>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Unit Testing</h5>
+                        <p class="card-text">Click below to learn more about pytest!</p>
+                        <a class="btn btn-primary"
+                           href="https://docs.pytest.org/en/6.2.x/contents.html"
+                           role="button">Learn
+                            more!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>FINAL RESULT</b></h4>
+                Here is the final test function, <code>test_calculator_add_method()</code>, that follows the AAA test pattern
+                for our <code>add()</code>
+                method:<br><br>
+                <img src="{{ url_for('static', filename='images/test_calculator_add_method.png') }}"
+                     alt="test_calculator_add_method()"
+                     class="center" style="width:75%;"><br><br>
+                To see the full calculator_test.py script, click below: <br>
+                <a class="btn btn-primary"
+                   href="https://github.com/tlr24/IS601-docker-flask/blob/master/tests/calculator_test.py"
+                   role="button">Go to calculator_test.py
+                </a>
+                <br><br><br>
+                You can learn more about AAA testing by clicking below:<br>
+                <a class="btn btn-primary"
+                   href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
+                   role="button">Learn
+                    more
+                </a>
+                <br><br><br><br>
+            </div>
+        </div>
+    </small>
+{% endblock %}
