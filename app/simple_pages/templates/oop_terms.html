@@ -1,1 +1,267 @@
 {% extends "base.html" %}
+{% block content %}
+    <h2><b>OOP Glossary</b></h2>
+    <small>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    OOP or object-oriented programming uses many concepts including: <br><br>
+                    Instantiation, object, class, namespace, constructor, fixture, type hint, type cast, unit test, static, instance method, instance property, static method, static property, encapsulation, inheritance, polymorphism, abstraction<br><br>
+                </p>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>OOP Terms</li>
+                    <li>Overview of SOLID</li>
+                    <li>Overview of Design Patterns</li>
+                    <li>Helpful Links</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>OOP Terms</b></h4><br>
+                <h5><b>Instantiation</b></h5>
+                <p>
+                    Instantiation is creating an instance of a class. <br>
+                    When an object is instantiated, it inherits all the data and methods from the class. It becomes an independent instance of the class with its own properties separate from any other instance.<br><br>
+                </p>
+                <h5><b>Object</b></h5>
+                <p>
+                    An object is an instance of a class.<br>
+                    It is a copy of the class as the class is the blueprint while an object actually carries the properties and methods.<br><br>
+                </p>
+                <h5><b>Class</b></h5>
+                <p>
+                    A class is a blueprint or outline used to instantiate objects.<br>
+                    It defines the data and functions to be instantiated with the object in code.<br><br>
+                    A class in python can be defined using the following syntax: <code>class Calculator:</code><br><br>
+                </p>
+                <h5><b>Namespace</b></h5>
+                <p>
+                    A namespace is a collection of classes organized logically in the program.<br>
+                    Namespaces help define the scope of the names within a class. <br><br>
+                    Namespaces are like folders containing classes where no two classes can have the same name. They help logically organize the code.<br><br>
+                    In python, adding __init__.py to a directory makes classes in the folder exist inside the namespace.<br><br>
+                    We use this in our calculator many times. For example, when we include __init__.py in the operations folder, it becomes a namespace. The classes inside become part of the operations namespace.<br>
+                    The namespace for the __init__.py file is the name of the folder the namespace is in. __init__ is the default file that goes in the folder for the namespaces.<br><br>
+                </p>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/oop-clipart.png') }}"
+                     class="w-30" width="90%"
+                     alt="oop-clipart">
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/namespace_example.png') }}"
+                     class="w-30" width="90%"
+                     alt="namespace_example">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h5><b>Constructor</b></h5>
+                <p>
+                    A constructor is a method that gets called to instantiate an object.<br>
+                    In python, the constructor method is created with the <code>__init__</code> function.<br><br>
+                    An example of an <code>__init__</code> constructor method can be found in our Calculation class.<br><br>
+                    <img src="{{ url_for('static', filename='images/calculation_init.png') }}"
+                        class="w-30" width="90%"
+                        alt="calculation_init"><br><br>
+                    The constructor method can be called to instantiate a Calculation object by calling <code>Calculation()</code>.
+                    <br><br><br>
+                    <b><i>Note:</i></b> The full calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
+                </p>
+                <h5><b>Fixture</b></h5>
+                <p>
+                    Fixtures define the steps and data that constitute the arrange phase of a test.<br><br>
+                    An example of a fixture in the calculator program is in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/tests/history_test.py">history_test.py</a>:<br>
+                    <img src="{{ url_for('static', filename='images/history_test.png') }}"
+                        class="w-30" width="90%"
+                        alt="history_test"><br><br>
+                    This fixture is used in the parameters of history test functions to clear the history to start with an empty history list for each test.<br><br>
+                    The <code>@pytest.fixture</code> decorator above <code>clear_history_fixture()</code> indicates to pytest that it is a fixture.
+                </p>
+                <br><br>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">AAA Testing</h5>
+                        <p class="card-text">Click below to learn more about AAA testing!</p>
+                        <a class="btn btn-primary"
+                           href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
+                           role="button">Learn
+                            more!</a>
+                    </div>
+                </div>
+                <br><br>
+                <div>
+                    <img src="{{ url_for('static', filename='images/unit_testing_clipart.png') }}"
+                         class="w-30" width="90%"
+                         alt="unit_testing_clipart">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h5><b>Type Hinting</b></h5>
+                <p>
+                    Type hinting is a way to statically hint or indicate the type of value passed within Python code.<br><br>
+                    We use type hinting in our Calculation class <code>__init__</code> function:<br>
+                    <img src="{{ url_for('static', filename='images/typehint.png') }}"
+                        class="w-30" width="90%"
+                        alt="typehint"><br><br>
+                    The type hint occurs with the <code>tuple_list</code> parameter in line 8 as it hints that it should be of the tuple type.
+                    <br><br><br>
+                    <b><i>Note:</i></b> The full calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
+                </p>
+                <h5><b>Type Cast</b></h5>
+                <p>
+                    Type casting is converting one data type to another. <br><br>
+                    An example is in the Calculation class below on lines 27 and 28 where the value is being converted to a float from its original type and from a list to a tuple, respectively.<br><br>
+                    <img src="{{ url_for('static', filename='images/typecast.png') }}"
+                        class="w-30" width="90%"
+                        alt="typecast">
+                    <br><br><br>
+                    <b><i>Note:</i></b> The full calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
+                </p>
+                <br><br>
+            </div>
+            <div class="col">
+                <br><br>
+                <div>
+                    <img src="{{ url_for('static', filename='images/unit_testing_clipart.png') }}"
+                         class="w-30" width="90%"
+                         alt="unit_testing_clipart">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h5><b>Unit Test</b></h5>
+                <p>
+                    A unit test is a testing method that tests small, individual units of code to make sure they function properly as expected.<br><br>
+                    Unit tests help isolate where code may be broken to identify issues and fix programs quickly and efficiently.<br><br>
+                    We use unit tests for every function in the code. Our unit tests can be found in the test files in the <a href="https://github.com/tlr24/IS601-docker-flask/tree/master/tests">test</a> directory.<br><br>
+                    Here is an example of a unit test in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/tests/operations_test.py">operations_test.py</a>:<br>
+                    <img src="{{ url_for('static', filename='images/test_operations_add_method.png') }}"
+                        class="w-30" width="50%"
+                        alt="test_operations_add_method"><br><br>
+                </p><br>
+                <h5><b>Static</b></h5><br>
+                <h6><b>Static Methods</b></h6>
+                <p>
+                    Static methods are methods that can be called without instantiating an object of the class they belong to.<br><br>
+                    They are utility functions that are there to do actions and calculations. They do not take up memory and help for usability.<br><br>
+                    Here is an example of a static method in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>:<br>
+                    <img src="{{ url_for('static', filename='images/static_addition.png') }}"
+                        class="w-30" width="40%"
+                        alt="static_addition"><br><br>
+                    The <code>@staticmethod</code> decorate above the <code>add()</code> method indicates that it is a static method, so you do not need to instantiate an Addition object everytime you want to add.
+                    <br><br>
+                </p>
+                <h6><b>Static Properties</b></h6>
+                <p>
+                    Static properties work just like static methods in how you do not need to instantiate an object to access the static property.<br><br>
+                    An example in our program would be the history list property in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/history/__init__.py">history/__init__.py</a>.<br>
+                    <img src="{{ url_for('static', filename='images/history_property.png') }}"
+                        class="w-30" width="45%"
+                        alt="history_property"><br><br>
+                    The history property will contain the values that were added to it until the end of the program or until we clear it.<br><br>
+                    Static properties have only one instance in the whole program for the life of the program.
+                </p>
+                <br><br>
+            </div>
+            <div class="col">
+                <br><br>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">LINKS</h5>
+                        <p class="card-text">
+                            <a href="https://performancelabus.com/unit-testing-importance/">What is Unit Testing and
+                                Why</a><br>
+                            <a href="https://github.com/tlr24/IS601-docker-flask">Calculator Project Github</a><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h5><b>Instance</b></h5><br>
+                <h6><b>Instance Methods</b></h6>
+                <p>
+                    Instance methods are methods that can be called on an instance of a class.<br>
+                    They operate on each individual object in memory.<br><br>
+                    Here is an example of an instance method in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>:<br>
+                    <img src="{{ url_for('static', filename='images/addition_class.png') }}"
+                        class="w-30" width="60%"
+                        alt="addition_class"><br><br>
+                    The <code>get_result()</code> method is an instance method that operates on the <code>self.values</code> property of that particular Addition instance.<br><br>
+                    Whenever we see <code>self</code> as a parameter in a method, it is an instance method.
+                    <br><br>
+                </p>
+                <h6><b>Instance Properties</b></h6>
+                <p>
+                    Instance properties are properties that are encapsulated in an instance.<br>
+                    They are the properties of a class can be accessed from the instance of that class.<br><br>
+                    An example of an instance property can be found in our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">Addition</a> class (see above) as <code>self.values</code> contains the values for each instance of the Addition class.<br><br>
+                    Each instance has its own independent values for their properties.<br><br>
+                    For example, if we were to instantiate an Addition instance with <code>self.values = (1, 2)</code> and another with <code>self.values = (3, 4)</code>, and if we were to call <code>get_result()</code> on both, we would get 3 and 7, respectively.
+                </p>
+                <br><br>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/aaa_testing_chart.png') }}"
+                     class="w-30" width="100%"
+                     alt="aaa_testing_chart">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h5><b>Encapsulation</b></h5>
+                <p>
+                    Encapsulation is the concept of wrapping attributes and behavior into a class.<br>
+                    When an object is instantiated, it encapsulates its variables and functions from the class into a single unit.<br><br>
+                    We see encapsulation in action when looking at instance methods and properties that come with an instance each time we instantiate a class.<br><br>
+                    To see examples and learn more about encapsulation please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                </p>
+                <h5><b>Inheritance</b></h5>
+                <p>
+                    Inheritance is the concept of defining a class that inherits the data and behavior from another class.<br>
+                    The class that is being inherited from is called the <b>parent or base</b> class and the inheriting class is called the <b>child</b> class.<br><br>
+                    We see inheritance in action when our Addition, Subtraction, Multiplication, and Division classes inherit properties and methods from their <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">Calculation</a> parent class.<br><br>
+                    To see examples and learn more about inheritance please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                </p>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h5><b>Polymorphism</b></h5>
+                <p>
+                    Polymorphism is the concept of using a common interface for multiple forms of data types.<br>
+                    The class that is being inherited from is called the <b>parent or base</b> class and the inheriting class is called the <b>child</b> class.<br><br>
+                    We see polymorphism in action in our operation calculation classes of Addition, Subtraction, Multiplication, and Division in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>.<br><br>
+                    Each operation calculation class inherits from the Calculation class and has a <code>get_result()</code> method that knows how to perform its calculation on the values for each different type of calculation with the same interface.<br><br>
+                    To see examples and learn more about polymorphism please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                </p>
+                <h5><b>Abstraction</b></h5>
+                <p>
+                    Abstraction is the concept of hiding the internal implementations of a process or method from the user.<br>
+                    We see abstraction in action in our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/__init__.py">calculator</a> class with the <code>add()</code>, <code>subtract()</code>, <code>multiply()</code>, and <code>divide()</code> methods.<br><br>
+                    The actual code and methods that do the calculating are hidden in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculation/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>.<br><br>
+                    This simplifies the job of the user by allowing them only to call <code>add()</code> from the calculator interface to do their operations.<br><br>
+                    To see examples and learn more about abstraction please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                </p>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/pass_fail.png') }}"
+                     class="w-30" width="90%"
+                     alt="pass_fail">
+            </div>
+        </div>
+
+    </small>
+{% endblock %}
