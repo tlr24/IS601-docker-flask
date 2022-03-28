@@ -71,7 +71,7 @@
                             more!</a>
                     </div>
                 </div>
-                <br><br>
+                <br><br><br><br>
                 <div>
                     <img src="{{ url_for('static', filename='images/oop-concepts-circle-chart.png') }}"
                          class="w-30" width="90%"
@@ -122,18 +122,28 @@
 	            As seen on line 33 of the Addition class, the <code>get_result()</code> method is able to read from the self.values property that is inherited from the Calculation class in the Addition class.<br><br><br><br>
 	            Inheritance allows for re-usability of code as it allows derived classes to add new features on top the capabilities of a base class.<br><br>
                 <b><i>Note:</i></b> The full Calculation and all the operation calculation classes can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br><br>
-                <br><br><br>
+                <br>
+                <h5><b>SINGLE VS. MULTIPLE INHERITANCE</b></h5>
+                There are 2 types of inheritance: single and multiple.<br><br>
+                In <b>single inheritance</b>, you can have a class where the child inherits the parent's properties and we only have one that one level of the parent-child relationship. <br><br>
+                In <b>multiple inheritance</b>, we can put multiple smaller classes together to make a superclass which is a bundle of classes. Each one of those classes have no dependencies on each other so they can be recomposed together. <br><br>
+                Having smaller classes allows us to more easily recompose our classes by adding them together with inheritance.
+                <br><br><br><br>
             </div>
             <div class="col">
-                <br><br><br>
+                <br><br><br><br><br>
                 <img src="{{ url_for('static', filename='images/oop-graphic.png') }}"
                      class="w-30" width="90%"
                      alt="oop-graphic">
-                <br><br><br>
+                <br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/class.png') }}"
+                     class="w-30" width="70%"
+                     alt="class">
+                <br><br><br><br><br>
                 <img src="{{ url_for('static', filename='images/inheritance.png') }}"
                      class="w-30" width="100%"
                      alt="inheritance">
-                <br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <img src="{{ url_for('static', filename='images/single-vs-multiple-inheritance.jpg') }}"
                      class="w-30" width="100%"
                      alt="single-vs-multiple-inheritance">
