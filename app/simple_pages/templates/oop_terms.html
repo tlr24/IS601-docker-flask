@@ -25,17 +25,27 @@
                 <p>
                     Instantiation is creating an instance of a class. <br>
                     When an object is instantiated, it inherits all the data and methods from the class. It becomes an independent instance of the class with its own properties separate from any other instance.<br><br>
+                    Here is an example of instantiating an instance of the <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">Addition</a> class found in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/tests/calculations_test.py">calculations_test.py</a>:<br>
+                    <img src="{{ url_for('static', filename='images/instantiation.png') }}"
+                         class="w-30" width="70%"
+                         alt="instantiation"><br><br>
+                    The <code>addition_object</code> on line 11 is an <b>object</b> or an <b>instance</b> of the <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">Addition</a> class (instantiated with the create factory method) that has its own tuple of values as defined on line 7.
                 </p>
                 <h5><b>Object</b></h5>
                 <p>
                     An object is an instance of a class.<br>
                     It is a copy of the class as the class is the blueprint while an object actually carries the properties and methods.<br><br>
+                    (See instantiation section for example)<br><br>
                 </p>
                 <h5><b>Class</b></h5>
                 <p>
                     A class is a blueprint or outline used to instantiate objects.<br>
                     It defines the data and functions to be instantiated with the object in code.<br><br>
-                    A class in python can be defined using the following syntax: <code>class Calculator:</code><br><br>
+                    A class in python can be defined using the following syntax: <code>class ExampleClass:</code><br><br>
+                    We have many classes defined in our calculator program including our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">Addition operation class</a>:<br>
+                    <img src="{{ url_for('static', filename='images/addition_operation.png') }}"
+                         class="w-30" width="40%"
+                         alt="addition_operation"><br><br>
                 </p>
                 <h5><b>Namespace</b></h5>
                 <p>
@@ -178,9 +188,8 @@
                     <div class="card-body">
                         <h5 class="card-title">LINKS</h5>
                         <p class="card-text">
-                            <a href="https://performancelabus.com/unit-testing-importance/">What is Unit Testing and
-                                Why</a><br>
-                            <a href="https://github.com/tlr24/IS601-docker-flask">Calculator Project Github</a><br></p>
+                            <a href="https://www.baeldung.com/solid-principles">SOLID Principles Guide</a><br>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -223,14 +232,14 @@
                     Encapsulation is the concept of wrapping attributes and behavior into a class.<br>
                     When an object is instantiated, it encapsulates its variables and functions from the class into a single unit.<br><br>
                     We see encapsulation in action when looking at instance methods and properties that come with an instance each time we instantiate a class.<br><br>
-                    To see examples and learn more about encapsulation please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                    To see examples and learn more about encapsulation, please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
                 </p>
                 <h5><b>Inheritance</b></h5>
                 <p>
                     Inheritance is the concept of defining a class that inherits the data and behavior from another class.<br>
                     The class that is being inherited from is called the <b>parent or base</b> class and the inheriting class is called the <b>child</b> class.<br><br>
                     We see inheritance in action when our Addition, Subtraction, Multiplication, and Division classes inherit properties and methods from their <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">Calculation</a> parent class.<br><br>
-                    To see examples and learn more about inheritance please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                    To see examples and learn more about inheritance, please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
                 </p>
             </div>
             <div class="col">
@@ -245,7 +254,7 @@
                     The class that is being inherited from is called the <b>parent or base</b> class and the inheriting class is called the <b>child</b> class.<br><br>
                     We see polymorphism in action in our operation calculation classes of Addition, Subtraction, Multiplication, and Division in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>.<br><br>
                     Each operation calculation class inherits from the Calculation class and has a <code>get_result()</code> method that knows how to perform its calculation on the values for each different type of calculation with the same interface.<br><br>
-                    To see examples and learn more about polymorphism please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                    To see examples and learn more about polymorphism, please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
                 </p>
                 <h5><b>Abstraction</b></h5>
                 <p>
@@ -253,7 +262,7 @@
                     We see abstraction in action in our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/__init__.py">calculator</a> class with the <code>add()</code>, <code>subtract()</code>, <code>multiply()</code>, and <code>divide()</code> methods.<br><br>
                     The actual code and methods that do the calculating are hidden in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculation/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>.<br><br>
                     This simplifies the job of the user by allowing them only to call <code>add()</code> from the calculator interface to do their operations.<br><br>
-                    To see examples and learn more about abstraction please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                    To see examples and learn more about abstraction, please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
                 </p>
             </div>
             <div class="col">
@@ -262,6 +271,65 @@
                      alt="pass_fail">
             </div>
         </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>Overview of SOLID</b></h4>
+                <p>
+                    While object-oriented programming is defined by encapsulation, polymorphism, inheritance, and abstraction, SOLID acts as the rules for OOP.<br><br>
+                    SOLID mainly consists of 5 object-oriented design principles including: Single-Responsibility Principle, Open-Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle.<br><br>
+                </p>
+                <br><br>
+                <h5><b>Single-Responsibility Principle</b></h5>
+                <p>
+                    The Single-Responsibility Principle states that a function should do one and <i>only</i> one thing.<br>
+                    There should be one and only place that controls a single action in a program.<br><br>
+                </p>
+                <h5><b>Open-Closed Principle</b></h5>
+                <p>
+                    The Single-Responsibility Principle states that a function should be open for extension but closed for modification.<br><br>
+                    Once a function is finished, you shouldn’t need to go back and change it for any reason. You can modify how it works by adding to it externally but the function itself shouldn’t need to be changed.<br><br>
+                </p>
+                <h5><b>Liskov Substitution Principle</b></h5>
+                <p>
+                    The Liskov Substitution Principle states that we should be able to substitute parent classes and child classes together.<br><br>
+                    Every subclass should be able to substitute for their parent class.<br><br>
+                </p>
+                <h5><b>Interface Segregation Principle</b></h5>
+                <p>
+                    The Interface Segregation Principle states that classes should be separated in a way that avoids having unused methods inherited in another class.<br><br>
+                    To avoid this, classes should do one and only one thing.<br><br>
+                </p>
+                <h5><b>Dependency Inversion Principle</b></h5>
+                <p>
+                    The Dependency Inversion Principle states that classes should depend on abstract classes, not concrete ones.<br><br>
+                    This helps decouple classes and allow them to call each other in a way that allows extensions rather than hardcoded dependencies.<br><br>
+                </p>
 
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/observe_action.jpg') }}"
+                     class="w-30" width="90%"
+                     alt="observe_action">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>Overview of Design Patterns</b></h4>
+                <p>
+                    When you take the properties of OOP and combine it with SOLID, the result becomes design patterns.<br><br>
+                    Design patterns are established, consistent industry standard ways of doing 23 of the most common actions a program needs to do in OOP. <br><br>
+                    They help each programmer's solutions to look alike to more easily be able to pick up and work on someone else's code.<br><br>
+                    Some of the design patterns we use in our calculator include: facade, factory, command, and decorators.<br><br>
+                    To see examples and learn more about design patterns, please refer to the <a href="/solid">SOLID</a> article.<br><br>
+                </p>
+                <br><br><br><br>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/unit-testing-circle-chart.jpg') }}"
+                     class="w-30" width="80%"
+                     alt="unit-testing-circle-chart">
+            </div>
+            <br><br>
+        </div>
     </small>
 {% endblock %}
