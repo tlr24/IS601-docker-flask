@@ -4,6 +4,7 @@ def test_request_main_menu_links(client):
     """Tests the main menu links in the nav bar"""
     response = client.get("/")
     assert response.status_code == 200
+    assert b'<a class="nav-link" href="/oop_terms">OOP Terms</a>' in response.data
     assert b'<a class="nav-link" href="/aaa">AAA Testing</a>' in response.data
     assert b'<a class="nav-link" href="/oopprinciples">OOP Principles</a>' in response.data
     assert b'<a class="nav-link" href="/git">Git</a>' in response.data
@@ -16,6 +17,12 @@ def test_request_index(client):
     response = client.get("/")
     assert response.status_code == 200
     assert b"Welcome!" in response.data
+
+def test_request_oop_terms_page(client):
+    """Tests the OOP terms page"""
+    response = client.get("/oop_terms")
+    assert response.status_code == 200
+    assert b"OOP Terms" in response.data
 
 def test_request_aaa_testing_page(client):
     """Tests the AAA Testing page"""
