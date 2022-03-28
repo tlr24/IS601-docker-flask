@@ -12,3 +12,8 @@ code {
     color: #697A89;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
+
+div-pictures-row {
+  display: flex;
+  justify-content: space-between;
+}
