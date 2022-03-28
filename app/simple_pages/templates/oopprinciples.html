@@ -1,1 +1,247 @@
 {% extends "base.html" %}
+{% block content %}
+    <h2><b>OOP Principles</b></h2>
+    <small>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    OOP or object-oriented programming is a model of programming that designs software around the
+                    organization of objects and data rather than functions and logic. Our calculator program is written
+                    based on the 4 core OOP principles discussed below. <br><br>
+                    The four principles include <b>Encapsulation, Inheritance, Polymorphism, and
+                    Abstraction</b>.<br><br>
+                </p>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Encapsulation</li>
+                    <li>Inheritance</li>
+                    <li>Polymorphism</li>
+                    <li>Abstraction</li>
+                    <li>Helpful Links</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>ENCAPSULATION</b></h4>
+                <p>
+                    Encapsulation is the idea that describes wrapping attributes and behavior into a class. <br><br>
+                    Objects are instances of a class. When an object is instantiated, it encapsulates its variables and
+                    functions from the class into a single unit.<br><br>
+                    Typically, variables in a class are set to private and can only be modified by public functions that
+                    can be used outside the class in order to avoid accidental change of the variables.<br><br><br>
+                </p>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/oop.jpg') }}"
+                     class="w-30" width="80%"
+                     alt="oop">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    An example of encapsulation in our calculator program is in our calculations class, found in <a
+                        href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/history/__init__.py">history/__init__.py</a>:<br><br>
+                    <img src="{{ url_for('static', filename='images/calculations_class.png') }}" alt="calculations_class"
+                         class="center" style="width:75%;"><br>
+                </p>
+                <br><br>
+                <b><i>Note:</i></b> The full calculations class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/history/__init__.py">here</a> (full script not shown here).<br><br><br>
+                In our example, we can see that we create a Calculations class on line 5. On line 8, we give our Calculations class a list variable named history to store our calculation history.<br><br>
+	            We also define several methods including <code>add_calculation()</code> (line 11) and <code>clear_history()</code> (line 17) (among others not shown here) that modify our history variable by appending and emptying it.<br><br>
+	            When a Calculations object is instantiated from the Calculations class, it acts as a single unit that encapsulates the history variable and all of its functions that can alter the history variable when called.<br><br>
+                <!-- To see encapsulation in action, we can look at another example of our <code>test_addition_get_result()</code> method in <a
+                        href="https://github.com/tlr24/IS601-docker-flask/blob/master/tests/calculations_test.py">calculations_test.py</a><br>
+                <img src="{{ url_for('static', filename='images/encapsulating_addition_obj.png') }}" alt="encapsulating_addition_obj"
+                         class="center" style="width:75%;"><br><br>
+                Here we see on line 31 that we instantiate the Addition class as an object.<br>
+                The Addition instance that is stored inside the <code>addition_object</code> variable encapsulates the data and the functionality to work on the data to perform the get_result() calculation. It encapsulates the data (the tuple), and the method to work on said data (get_result()).-->
+                <br><br><br>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">OOP Principles</h5>
+                        <p class="card-text">Click below to learn more about OOP Principles!</p>
+                        <a class="btn btn-primary"
+                           href="https://www.programiz.com/python-programming/object-oriented-programming"
+                           role="button">Learn
+                            more!</a>
+                    </div>
+                </div>
+                <br><br>
+                <div>
+                    <img src="{{ url_for('static', filename='images/oop-concepts-circle-chart.png') }}"
+                         class="w-30" width="90%"
+                         alt="oop-concepts-circle-chart">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>INHERITANCE</b></h4>
+                <p>
+                    Inheritance allows us to define a class that inherits the data and behavior from another class.<br><br>
+                    The class that is being inherited from is called the <b>parent</b> or <b>base</b> class.<br>
+                    The class that is inheriting from the parent class is called the <b>child</b> class. <br><br>
+                    <br><br>
+                </p>
+            </div>
+            <div class="col">
+                <br><br>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">LINKS</h5>
+                        <p class="card-text">
+                            <a href="https://www.geeksforgeeks.org/python-oops-concepts/">Python OOP Concepts</a><br>
+                            <a href="https://www.geeksforgeeks.org/encapsulation-in-python/">Python Encapsulation</a><br>
+                            <a href="https://www.geeksforgeeks.org/inheritance-in-python/">Python Inheritance</a><br>
+                            <a href="https://www.geeksforgeeks.org/polymorphism-in-python/">Python Polymorphism</a><br>
+                            <a href="https://www.geeksforgeeks.org/abstract-classes-in-python/">Python Abstraction</a><br>
+                            <a href="https://github.com/tlr24/IS601-docker-flask">Calculator Project Github</a><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                An example of inheritance in our calculator program is in the Calculation and Addition classes.<br><br>
+	            The Calculation class acts as the parent/base class.<br><br>
+                <img src="{{ url_for('static', filename='images/calculation.py.png') }}"
+                         class="w-30" width="90%"
+                         alt="calculation.py"><br><br>
+                <b><i>Note:</i></b> The full Calculation & Addition classes are found in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>.<br><br><br><br>
+	            The Addition, Subtraction, Multiplication, and Division classes all inherit the properties and methods from the Calculation class as they extend the Calculation class.<br><br>
+	            <img src="{{ url_for('static', filename='images/addition_class.png') }}"
+                         class="w-30" width="60%"
+                         alt="addition_class.py"><br><br><br>
+	            As seen when defining the Addition class (line 30), the Addition class inherits from the Calculation class (likewise in the other operation classes).<br><br>
+	            This means that the Addition class inherits the values property, <code>__init__</code> method, <code>create()</code> factory method, and <code>convert_args_to_list_float()</code> method.<br><br>
+	            As seen on line 33 of the Addition class, the <code>get_result()</code> method is able to read from the self.values property that is inherited from the Calculation class in the Addition class.<br><br><br><br>
+	            Inheritance allows for re-usability of code as it allows derived classes to add new features on top the capabilities of a base class.<br><br>
+                <b><i>Note:</i></b> The full Calculation and all the operation calculation classes can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br><br>
+                <br><br><br>
+            </div>
+            <div class="col">
+                <br><br><br>
+                <img src="{{ url_for('static', filename='images/oop-graphic.png') }}"
+                     class="w-30" width="90%"
+                     alt="oop-graphic">
+                <br><br><br>
+                <img src="{{ url_for('static', filename='images/inheritance.png') }}"
+                     class="w-30" width="100%"
+                     alt="inheritance">
+                <br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/single-vs-multiple-inheritance.jpg') }}"
+                     class="w-30" width="100%"
+                     alt="single-vs-multiple-inheritance">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>POLYMORPHISM</b></h4>
+                Polymorphism is the ability to use a common interface for multiple forms of data types.<br><br>
+                An example of polymorphism in our calculator program is in our operation calculation classes of Addition, Subtraction, Multiplication, and Division in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>.<br>
+                <br><br><br>
+                Let's look at a few of these classes: <br><br>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/polymorphism.png') }}"
+                     class="w-30" width="90%"
+                     alt="polymorphism">
+                <br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div-pictures-row>
+                <img src="{{ url_for('static', filename='images/addition_class.png') }}"
+                     width="33%"
+                     alt="addition_class">
+                <img src="{{ url_for('static', filename='images/subtraction_class.png') }}"
+                     width="33%"
+                     alt="subtraction_class">
+                <img src="{{ url_for('static', filename='images/multiplication_class.png') }}"
+                     width="33%"
+                     alt="multiplication_class">
+            </div-pictures-row>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <br><br>
+                Each of our operation calculation classes inherit from the <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">Calculation</a> class.<br><br>
+                Each of these classes take in values to calculate and have a <code>get_result()</code> that knows how to perform the calculation for each type or shape of calculation.<br><br>
+                This is an example of polymorphism where we use the same interface for different objects to make the code more efficient.<br><br><br><br>
+                Polymorphism means that one thing can work on many shapes.<br><br>
+                The idea of polymorphism is that the object should know how to do whatever it is that it needs to do for whichever shape it is.<br><br><br><br>
+                Here, the <code>get_result()</code> is the same method name for all the calculations. However, when we call it on an Addition object, the Addition object knows that it has a list of numbers and that it knows how to add to get the result.<br><br>
+                The same goes for the other calculation objects where it knows that whatever type of object it is that it calls the correct method on that object.<br><br>
+                Addition, subtraction, multiplication, and division (each one of those shapes) know how to do the correct calculation for itself.<br><br>
+                Each time we call the method on an object extended from a parent, it will know which version of the method to use as per the object type.<br><br>
+                <br><br><br>
+            </div>
+            <div class="col">
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/polymorphism-graphic.jpeg') }}"
+                     class="w-30" width="90%"
+                     alt="polymorphism-graphic">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>ABSTRACTION</b></h4>
+                Abstraction focuses on hiding the internal implementations of a process or method from the user.<br><br><br>
+                An example of abstraction in our calculator program is found in the calculator class.
+	            In the calculator class, there are simple methods for basic calculator operations including <code>add()</code>, <code>subtract()</code>, <code>multiply()</code>, and <code>divide()</code>. <br><br>
+                <img src="{{ url_for('static', filename='images/calculator_class.png') }}"
+                     class="w-30" width="60%"
+                     alt="calculator_class">
+                <br><br>
+                <b><i>Note:</i></b> The full calculator class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/__init__.py">here</a>.
+                <br><br><br><br>
+            </div>
+            <div class="col">
+                <br><br><br>
+                <img src="{{ url_for('static', filename='images/oop-abstraction.png') }}"
+                     class="w-30" width="90%"
+                     alt="oop-abstraction">
+                <br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/abstraction_clipart.png') }}"
+                     class="w-30" width="90%"
+                     alt="abstraction_clipart">
+                <br>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-8">
+            The actual code that does all the calculating for these methods is hidden behind the <code>Addition.create(values_tuple).get_result()</code> (etc.) methods found in the Calculation classes which then inherits all the Addition, Subtraction, etc. classes that contain the methods with the actual code to do the calculations. <br><br>
+                Here is the hidden code behind the <code>add()</code> method in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculation/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>:<br><br>
+                <b>calculation/__init__.py:</b><br>
+                <img src="{{ url_for('static', filename='images/addition_class.png') }}"
+                         class="w-30" width="60%"
+                         alt="addition_class.py"><br><br>
+                <b>operation/__init__.py:</b><br>
+                <img src="{{ url_for('static', filename='images/addition_operation.png') }}"
+                         class="w-30" width="40%"
+                         alt="addition_operation.py"><br><br><br>
+                The user only needs to call <code>add()</code> from the calculator to do their addition calculation as the actual code is hidden from them.<br><br>
+                Abstraction makes it easier for the user to use the calculator interface with the easy calculation methods that hides the real code behind the operation.
+                <br><br><br>
+                You can learn more about OOP principles by clicking below:<br>
+                <a class="btn btn-primary"
+                   href="https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/"
+                   role="button">Learn
+                    more
+                </a>
+                <br><br><br><br>
+        </div>
+        <div class="col">
+            <br><br>
+            <img src="{{ url_for('static', filename='images/abstraction-graphic.png') }}"
+                 class="w-30" width="90%"
+                 alt="abstraction_graphic">
+        </div>
+    </div>
+    </small>
+{% endblock %}
