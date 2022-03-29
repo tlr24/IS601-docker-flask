@@ -225,7 +225,7 @@
         </div>
     <div class="row">
         <div class="col-8">
-            The actual code that does all the calculating for these methods is hidden behind the <code>Addition.create(values_tuple).get_result()</code> (etc.) methods found in the Calculation classes which then inherits all the Addition, Subtraction, etc. classes that contain the methods with the actual code to do the calculations. <br><br>
+            The actual code that does all the calculating for these methods is hidden behind the <code>Calculations.add_addition_calculation(values_tuple)</code> (etc.) methods found in the Calculation classes which then inherits all the Addition, Subtraction, etc. classes that contain the methods with the actual code to do the calculations. <br><br>
                 Here is the hidden code behind the <code>add()</code> method in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculation/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>:<br><br>
                 <b>calculation/__init__.py:</b><br>
                 <img src="{{ url_for('static', filename='images/addition_class.png') }}"

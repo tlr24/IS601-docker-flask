@@ -125,14 +125,14 @@
         </div>
         <div class="row">
             <div class="col-8">
-                <h4><b>OVERVIEW OF DESIGN PATTERNS</b></h4>
+                <h4><b>DESIGN PATTERNS</b></h4>
                 <p>
                     When you take the properties of OOP and combine it with SOLID, the result becomes design patterns.<br><br>
                     Design patterns are established, consistent industry standard ways of doing 23 of the most common actions a program needs to do in OOP. <br><br>
                     They help each programmer's solutions to look alike to more easily be able to pick up and work on someone else's code.<br><br>
                     Some of the design patterns we use in our calculator include: <b>facade, factory, command, and decorators</b>.<br><br>
                 </p>
-                <h5><b>Facade</b></h5><br>
+                <h5><b>Facade Pattern</b></h5><br>
                 <p>
                     A facade pattern is accomplished when a program takes its separate classes and wraps them to cover up their separate nature so that it looks to the end user that the program is one cohesive program.<br><br>
                     Facades cover up the tons of classes and code inside the program to make it look simpler to the user much like how a house covers its wood and insulation.<br><br><br>
@@ -143,7 +143,7 @@
                     Just looking at the calculator class itself, the end user cannot see all the methods used in for calculating in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>.<br><br>
                     All the behind-the-scenes code is abstracted into a cover Calculator class facade.
                 </p>
-                <h5><b>Factory</b></h5><br>
+                <h5><b>Factory Pattern</b></h5><br>
                 <p>
                     A factory pattern's purpose is to create and return an instance of a class.<br>
                     It is a more standardized way of instantiating an object.<br><br>
@@ -154,7 +154,7 @@
                     The create method creates an instance/object of whatever type of calculation you are trying to get.<br><br>
                     It's single responsibility is to create and return an instance of the Calculation class, following the SRP.<br><br>
                 </p>
-                <h5><b>Command</b></h5><br>
+                <h5><b>Command Pattern</b></h5><br>
                 <p>
                     The command pattern allows the program to invoke specific methods for specific objects.<br>
                     This allows the program to have less 'if' statements, making it more streamlined and work more efficiently.<br><br>
@@ -165,7 +165,7 @@
                         alt="command_pattern_history"><br><br>
                     Each time we call one of these methods, it goes through the command chain of following through with the specific operation we called for.<br><br>
                 </p>
-                <h5><b>Decorators</b></h5><br>
+                <h5><b>Decorators Pattern</b></h5><br>
                 <p>
                     Decorators are a structural pattern that allow object to have a new functionality added to them by putting them inside special wrappers.<br><br>
                     An example of a decorator in our calculator program is <code>@pytest.fixture</code> in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/tests/history_test.py">history_test.py</a>.<br><br>
@@ -193,7 +193,7 @@
                 <img src="{{ url_for('static', filename='images/facade.png') }}"
                     class="w-30" width="100%"
                     alt="facade">
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <img src="{{ url_for('static', filename='images/factory.png') }}"
                     class="w-30" width="100%"
                     alt="factory">
