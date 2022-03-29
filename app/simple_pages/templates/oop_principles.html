@@ -48,7 +48,7 @@
                          class="center" style="width:75%;"><br>
                 </p>
                 <br><br>
-                <b><i>Note:</i></b> The full calculations class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/history/__init__.py">here</a> (full script not shown here).<br><br><br>
+                <b><i>Note:</i></b> The full Calculations class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/history/__init__.py">here</a> (full script not shown here).<br><br><br>
                 In our example, we can see that we create a Calculations class on line 5. On line 8, we give our Calculations class a list variable named history to store our calculation history.<br><br>
 	            We also define several methods including <code>add_calculation()</code> (line 11) and <code>clear_history()</code> (line 17) (among others not shown here) that modify our history variable by appending and emptying it.<br><br>
 	            When a Calculations object is instantiated from the Calculations class, it acts as a single unit that encapsulates the history variable and all of its functions that can alter the history variable when called.<br><br>
@@ -226,7 +226,7 @@
     <div class="row">
         <div class="col-8">
             The actual code that does all the calculating for these methods is hidden behind the <code>Calculations.add_addition_calculation(values_tuple)</code> (etc.) methods found in the Calculation classes which then inherits all the Addition, Subtraction, etc. classes that contain the methods with the actual code to do the calculations. <br><br>
-                Here is the hidden code behind the <code>add()</code> method in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculation/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>:<br><br>
+                Here is the hidden code behind the <code>add()</code> method in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>:<br><br>
                 <b>calculation/__init__.py:</b><br>
                 <img src="{{ url_for('static', filename='images/addition_class.png') }}"
                          class="w-30" width="60%"
