@@ -40,7 +40,10 @@
                 <p>
                     The Open-Closed Principle (OCP) states that a function should be open for extension but closed for modification.<br><br>
                     Once a function is finished, you shouldn’t need to go back and change it for any reason. You can modify how it works by adding to it externally but the function itself shouldn’t need to be changed.<br><br>
-                    An example of OCP being applied in our calculator program can be found in the <code>divide()</code> method our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">Division operation class</a>.<br><br><br>
+                    An example of OCP being applied in our calculator program can be found in the <code>divide()</code> method our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">Division operation class</a>:<br><br>
+                    <img src="{{ url_for('static', filename='images/divide_method.png') }}"
+                     class="w-30" width="40%"
+                     alt="divide_method"><br><br>
                     By OCP, a method must complete do whatever it needs to do to accomplish its single responsibility.<br><br>
                     Therefore, the <code>divide()</code> needs to not only do the divide but also have to handle the exception or prevent it when dividing by 0.<br><br>
                     While SRP says a method must do one thing, OCP says it must be done to completion including any error handlers that would be needed.<br><br>
@@ -96,7 +99,7 @@
                 <p>
                     The Dependency Inversion Principle states that classes should depend on abstract classes, not concrete ones.<br><br>
                     This helps decouple classes and allow them to call each other in a way that allows extensions rather than hardcoded dependencies.<br><br><br>
-                    An example of this in our calculator program is with the Calculation class and its Addition, Subtraction, Multiplication, and Division subclasses in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>.<br><br>
+                    An example of this in our calculator program is with the Calculation class and its Addition, Subtraction, Multiplication, and Division subclasses found in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>.<br><br>
                     The Calculation class acts as an abstract base class that is not coupled with its operation subclasses. In other words, each Calculation does not <i>have</i> to be an addition class (or any other operation).<br><br>
                     We can call the operation subclasses in a way that extend the Calculation class, depending on the abstract parent class rather than a concrete one.<br><br>
                 </p><br><br>
@@ -159,7 +162,7 @@
                     We send commands to the calculator history in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/history/__init__.py">history/__init__.py</a> to execute the specific method for the specific operation we call on.<br><br>
                     <img src="{{ url_for('static', filename='images/command_pattern_history.png') }}"
                         class="w-30" width="70%"
-                        alt="command_pattern_history.png"><br><br>
+                        alt="command_pattern_history"><br><br>
                     Each time we call one of these methods, it goes through the command chain of following through with the specific operation we called for.<br><br>
                 </p>
                 <h5><b>Decorators</b></h5><br>
