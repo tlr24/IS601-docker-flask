@@ -9,6 +9,10 @@
 
 * [Developmental Deployment](https://tlr24-dev.herokuapp.com/)
 
+###Pytest/Pylint/Coverage
+
+![pytest_pass](app/static/images/pytest_pass.png)
+
 ## Setting up CI/CD
 
 The result of this will be that when you create a pull request to merge a branch to master, it will deploy to your
