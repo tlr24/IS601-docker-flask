@@ -114,11 +114,9 @@
                 The <b>Act</b> stage is where we call the function to be tested. This is the function or method
                 call of the unit of code we are testing. The action is called so we can target whether it is
                 behaving correctly or not in the next step. <br><br>
-                In our example, we would be calling the <code>add()</code> function that we are testing like
+                In our example, we would be calling the <code>add()</code> function that we are testing using our arranged values like
                 this:<br><br>
-                <code>result = Calculator.add(values_tuple)</code><br><br>
-                We store our result of the action into a result variable to check if it's what we expect in the next
-                stage.
+                <code>Calculator.add(values_tuple())</code><br><br>
                 <br><br><br>
             </div>
             <div class="col">
@@ -144,7 +142,7 @@
                 In our example, we would call the following <b>assert</b> statement to make sure that the last
                 calculation result value is 7 as is expected of adding the numbers we fed the function in the arrange
                 stage:<br><br>
-                <code>assert result == 7</code> <br><br><br>
+                <code>assert Calculator.get_last_result_value() == 7</code> <br><br><br>
 
             </div>
             <div class="col">

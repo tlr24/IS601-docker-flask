@@ -6,12 +6,12 @@ def test_request_main_menu_links(client):
     assert response.status_code == 200
     assert b'<a class="nav-link" href="/oop_terms">OOP Terms</a>' in response.data
     assert b'<a class="nav-link" href="/aaa">AAA Testing</a>' in response.data
-    assert b'<a class="nav-link" href="/oopprinciples">OOP Principles</a>' in response.data
+    assert b'<a class="nav-link" href="/oop_principles">OOP Principles</a>' in response.data
     assert b'<a class="nav-link" href="/solid">SOLID</a>' in response.data
-    assert b'<a class="nav-link" href="/git">Git</a>' in response.data
-    assert b'<a class="nav-link" href="/docker">Docker</a>' in response.data
-    assert b'<a class="nav-link" href="/flask">Flask</a>' in response.data
-    assert b'<a class="nav-link" href="/cicd">CI/CD</a>' in response.data
+    assert b'<a class="dropdown-item" href="/git">Git</a>' in response.data
+    assert b'<a class="dropdown-item" href="/docker">Docker</a>' in response.data
+    assert b'<a class="dropdown-item" href="/flask">Flask</a>' in response.data
+    assert b'<a class="dropdown-item" href="/cicd">CI/CD</a>' in response.data
 
 def test_request_index(client):
     """Tests the index page"""
@@ -33,7 +33,7 @@ def test_request_aaa_testing_page(client):
 
 def test_request_oop_principles_page(client):
     """Tests the OOP principles page"""
-    response = client.get("/oopprinciples")
+    response = client.get("/oop_principles")
     assert response.status_code == 200
     assert b"OOP Principles" in response.data
 

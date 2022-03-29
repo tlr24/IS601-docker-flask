@@ -10,19 +10,22 @@ def values_tuple():
 def test_calculator_add_method():
     """Testing the Calculator Add method"""
     # Act for AAA testing
-    result = Calculator.add(values_tuple())
+    Calculator.add(values_tuple())
 
     # Assertion for AAA testing
-    assert result == 7
+    assert Calculator.get_last_result_value() == 7
 
 def test_calculator_subtract_method():
     """Testing the Calculator Subtract method"""
-    assert Calculator.subtract(values_tuple()) == 3
+    Calculator.subtract(values_tuple())
+    assert Calculator.get_last_result_value() == 3
 
 def test_calculator_multiply_method():
     """Testing the Calculator Multiply method"""
-    assert Calculator.multiply(values_tuple()) == 10
+    Calculator.multiply(values_tuple())
+    assert Calculator.get_last_result_value() == 10
 
 def test_calculator_divide_method():
     """Testing the Calculator Divide method"""
-    assert Calculator.divide(values_tuple()) == 2.5
+    Calculator.divide(values_tuple())
+    assert Calculator.get_last_result_value() == 2.5

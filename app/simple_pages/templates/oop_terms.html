@@ -76,7 +76,7 @@
                     A namespace is a collection of classes organized logically in the program.<br>
                     Namespaces help define the scope of the names within a class. <br><br>
                     Namespaces are like folders containing classes where no two classes can have the same name. They help logically organize the code.<br><br>
-                    In python, adding __init__.py to a directory makes classes in the folder exist inside the namespace.<br><br>
+                    In python, adding <b>__init__.py</b> to a directory makes classes in the folder exist inside the namespace.<br><br>
                     We use this in our calculator many times. For example, when we include __init__.py in the operations folder, it becomes a namespace. The classes inside become part of the operations namespace.<br>
                     The namespace for the __init__.py file is the name of the folder the namespace is in. __init__ is the default file that goes in the folder for the namespaces.<br><br>
                 </p>
@@ -99,7 +99,7 @@
                         alt="calculation_init"><br><br>
                     The constructor method can be called to instantiate a Calculation object by calling <code>Calculation()</code>.
                     <br><br><br>
-                    <b><i>Note:</i></b> The full calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
+                    <b><i>Note:</i></b> The full Calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
                 </p>
                 <h5><b>Fixture</b></h5>
                 <p>
@@ -133,7 +133,7 @@
                         alt="typehint"><br><br>
                     The type hint occurs with the <code>tuple_list</code> parameter in line 8 as it hints that it should be of the tuple type.
                     <br><br><br>
-                    <b><i>Note:</i></b> The full calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
+                    <b><i>Note:</i></b> The full Calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
                 </p>
                 <h5><b>Type Cast</b></h5>
                 <p>
@@ -143,7 +143,7 @@
                         class="w-30" width="90%"
                         alt="typecast">
                     <br><br><br>
-                    <b><i>Note:</i></b> The full calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
+                    <b><i>Note:</i></b> The full Calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
                 </p>
                 <br><br>
             </div>
@@ -177,7 +177,8 @@
                     <img src="{{ url_for('static', filename='images/static_addition.png') }}"
                         class="w-30" width="40%"
                         alt="static_addition"><br><br>
-                    The <code>@staticmethod</code> decorate above the <code>add()</code> method indicates that it is a static method, so you do not need to instantiate an Addition object everytime you want to add.
+                    The <code>@staticmethod</code> decorator above the <code>add()</code> method indicates that it is a static method, so you do not need to instantiate an Addition object everytime you want to add.<br><br>
+                    You can just call <code>Addition.add()</code> wherever you have Addition imported.
                     <br><br>
                 </p>
                 <h6><b>Static Properties</b></h6>
@@ -213,6 +214,7 @@
                             <a href="https://docs.python.org/3/library/typing.html">Type Hinting in Python</a><br>
                             <a href="https://realpython.com/python-namespaces-scope/">Namespaces in Python</a><br>
                             <a href="https://techvidvan.com/tutorials/terminologies-in-python/">Extra Python Concepts</a><br>
+                            <a href="https://github.com/tlr24/IS601-docker-flask">Calculator Project Github</a><br></p>
                         </p>
                     </div>
                 </div>
@@ -271,14 +273,15 @@
                     Encapsulation is the concept of wrapping attributes and behavior into a class.<br>
                     When an object is instantiated, it encapsulates its variables and functions from the class into a single unit.<br><br>
                     We see encapsulation in action when looking at instance methods and properties that come with an instance each time we instantiate a class.<br><br>
-                    To see examples and learn more about encapsulation, please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                    For example, we see encapsulation when we instantiate the <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">Addition</a> class (see instantiation above).<br><br>
+                    To see examples and learn more about encapsulation, please refer to the <a href="/oop_principles">OOP Principles</a> article.<br><br>
                 </p>
                 <h5><b>Inheritance</b></h5>
                 <p>
                     Inheritance is the concept of defining a class that inherits the data and behavior from another class.<br>
                     The class that is being inherited from is called the <b>parent or base</b> class and the inheriting class is called the <b>child</b> class.<br><br>
                     We see inheritance in action when our Addition, Subtraction, Multiplication, and Division classes inherit properties and methods from their <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">Calculation</a> parent class.<br><br>
-                    To see examples and learn more about inheritance, please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                    To see examples and learn more about inheritance, please refer to the <a href="/oop_principles">OOP Principles</a> article.<br><br>
                 </p>
             </div>
             <div class="col">
@@ -295,15 +298,15 @@
                     The class that is being inherited from is called the <b>parent or base</b> class and the inheriting class is called the <b>child</b> class.<br><br>
                     We see polymorphism in action in our operation calculation classes of Addition, Subtraction, Multiplication, and Division in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>.<br><br>
                     Each operation calculation class inherits from the Calculation class and has a <code>get_result()</code> method that knows how to perform its calculation on the values for each different type of calculation with the same interface.<br><br>
-                    To see examples and learn more about polymorphism, please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                    To see examples and learn more about polymorphism, please refer to the <a href="/oop_principles">OOP Principles</a> article.<br><br>
                 </p>
                 <h5><b>Abstraction</b></h5>
                 <p>
                     Abstraction is the concept of hiding the internal implementations of a process or method from the user.<br>
-                    We see abstraction in action in our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/__init__.py">calculator</a> class with the <code>add()</code>, <code>subtract()</code>, <code>multiply()</code>, and <code>divide()</code> methods.<br><br>
-                    The actual code and methods that do the calculating are hidden in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>.<br><br>
+                    We see abstraction in action in our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/__init__.py">Calculator</a> class with the <code>add()</code>, <code>subtract()</code>, <code>multiply()</code>, and <code>divide()</code> methods.<br><br>
+                    The actual code and methods that do the calculating are hidden in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>.<br><br>
                     This simplifies the job of the user by allowing them only to call <code>add()</code> from the calculator interface to do their operations.<br><br>
-                    To see examples and learn more about abstraction, please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
+                    To see examples and learn more about abstraction, please refer to the <a href="/oop_principles">OOP Principles</a> article.<br><br>
                 </p><br><br>
             </div>
             <div class="col">
