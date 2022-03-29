@@ -76,7 +76,7 @@
                     A namespace is a collection of classes organized logically in the program.<br>
                     Namespaces help define the scope of the names within a class. <br><br>
                     Namespaces are like folders containing classes where no two classes can have the same name. They help logically organize the code.<br><br>
-                    In python, adding __init__.py to a directory makes classes in the folder exist inside the namespace.<br><br>
+                    In python, adding <b>__init__.py</b> to a directory makes classes in the folder exist inside the namespace.<br><br>
                     We use this in our calculator many times. For example, when we include __init__.py in the operations folder, it becomes a namespace. The classes inside become part of the operations namespace.<br>
                     The namespace for the __init__.py file is the name of the folder the namespace is in. __init__ is the default file that goes in the folder for the namespaces.<br><br>
                 </p>
@@ -99,7 +99,7 @@
                         alt="calculation_init"><br><br>
                     The constructor method can be called to instantiate a Calculation object by calling <code>Calculation()</code>.
                     <br><br><br>
-                    <b><i>Note:</i></b> The full calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
+                    <b><i>Note:</i></b> The full Calculation class can be viewed <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">here</a>.<br><br>
                 </p>
                 <h5><b>Fixture</b></h5>
                 <p>
@@ -177,7 +177,8 @@
                     <img src="{{ url_for('static', filename='images/static_addition.png') }}"
                         class="w-30" width="40%"
                         alt="static_addition"><br><br>
-                    The <code>@staticmethod</code> decorate above the <code>add()</code> method indicates that it is a static method, so you do not need to instantiate an Addition object everytime you want to add.
+                    The <code>@staticmethod</code> decorator above the <code>add()</code> method indicates that it is a static method, so you do not need to instantiate an Addition object everytime you want to add.<br><br>
+                    You can just call <code>Addition.add()</code> wherever you have Addition imported.
                     <br><br>
                 </p>
                 <h6><b>Static Properties</b></h6>
@@ -213,6 +214,7 @@
                             <a href="https://docs.python.org/3/library/typing.html">Type Hinting in Python</a><br>
                             <a href="https://realpython.com/python-namespaces-scope/">Namespaces in Python</a><br>
                             <a href="https://techvidvan.com/tutorials/terminologies-in-python/">Extra Python Concepts</a><br>
+                            <a href="https://github.com/tlr24/IS601-docker-flask">Calculator Project Github</a><br></p>
                         </p>
                     </div>
                 </div>
