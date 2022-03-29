@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2><b>SOLID</b></h2>
+    <small>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    While object-oriented programming is defined by encapsulation, polymorphism, inheritance, and abstraction, SOLID acts as the rules for OOP.<br><br>
+                    SOLID mainly consists of 5 object-oriented design principles including: Single-Responsibility Principle, Open-Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle.<br><br>
+                </p>
+                <br><br>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Single-Responsibility</li>
+                    <li>Open-Closed</li>
+                    <li>Liskov Substitution</li>
+                    <li>Interface Segregation</li>
+                    <li>Dependency Inversion</li>
+                    <li>Helpful Links</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>SOLID PRINCIPLES</b></h4><br>
+                <h5><b>Single-Responsibility Principle</b></h5>
+                <p>
+                    The Single-Responsibility Principle (SRP) states that a function should do one and <i>only</i> one thing.<br>
+                    There should be one and only place that controls a single action in a program.<br><br>
+                    An example of SRP being applied in our calculator program can be found in the <code>add()</code> method our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">Addition operation class</a>:<br>
+                    <img src="{{ url_for('static', filename='images/addition_operation.png') }}"
+                        class="w-30" width="50%"
+                        alt="addition_operation"><br><br>
+                    The <code>add()</code> method's single job and responsibility is to add two given numbers together and return the result.<br>
+                    It only accomplishes one and only one job, making the code less complex and easier to understand, put together, and debug.<br><br>
+                </p>
+                <br><br>
+                <h5><b>Open-Closed Principle</b></h5>
+                <p>
+                    The Open-Closed Principle (OCP) states that a function should be open for extension but closed for modification.<br><br>
+                    Once a function is finished, you shouldn’t need to go back and change it for any reason. You can modify how it works by adding to it externally but the function itself shouldn’t need to be changed.<br><br>
+                    An example of OCP being applied in our calculator program can be found in the <code>divide()</code> method our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">Division operation class</a>.<br><br><br>
+                    By OCP, a method must complete do whatever it needs to do to accomplish its single responsibility.<br><br>
+                    Therefore, the <code>divide()</code> needs to not only do the divide but also have to handle the exception or prevent it when dividing by 0.<br><br>
+                    While SRP says a method must do one thing, OCP says it must be done to completion including any error handlers that would be needed.<br><br>
+                </p>
+                <br><br>
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/solid.jpeg') }}"
+                     class="w-30" width="90%"
+                     alt="solid">
+                <br><br><br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/solid-ood.png') }}"
+                     class="w-30" width="90%"
+                     alt="solid-ood">
+                <br><br><br><br><br><br>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">LINKS</h5>
+                        <p class="card-text">
+                            <a href="https://www.baeldung.com/solid-principles">SOLID Principles Guide</a><br>
+                            <a href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">Conceptual SOLID Principles</a><br>
+                            <a href="https://refactoring.guru/design-patterns">Design Patterns</a><br>
+                            <a href="https://sourcemaking.com/design_patterns/">More on Design Patterns</a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h5><b>Liskov Substitution Principle</b></h5>
+                <p>
+                    The Liskov Substitution Principle (LSP) states that we should be able to substitute parent classes and child classes together.<br><br>
+                    Every subclass should be able to substitute for their parent class.<br><br>
+                    An example of LSP in our calculator program in with the Addition calculation class and the Calculations class (both found in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>).<br><br>
+                    <img src="{{ url_for('static', filename='images/addition_class.png') }}"
+                            class="w-30" width="60%"
+                            alt="addition_class"><br><br>
+                    The Calculation class can be used by any one of its child classes (Addition, Subtraction, etc.).<br><br>
+                    There is no dependency that makes one child class make the parent class change in some way. The parent class can be used by any of its intended subclasses.<br><br>
+                </p>
+                <br><br>
+                <h5><b>Interface Segregation Principle</b></h5>
+                <p>
+                    The Interface Segregation Principle (ISP) states that classes should be separated in a way that avoids having unused methods inherited in another class.<br><br>
+                    To avoid this, classes should do one and only one thing.<br><br><br>
+                    An example of LSP in our calculator program in with the Addition, Subtraction, Multiplication, and Division calculation classes found in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>.<br><br>
+                    Instead of having them all listed under one single 'operations' class, we have them as separate classes per type that can be imported only where they are needed.<br><br>
+                    This helps facilitate inheritance in many situations like if we do not want to import the division methods for whatever reason, but we want to import the add methods, we don't have to since they aren't grouped together.<br><br>
+                </p>
+                <br><br>
+                <h5><b>Dependency Inversion Principle</b></h5>
+                <p>
+                    The Dependency Inversion Principle states that classes should depend on abstract classes, not concrete ones.<br><br>
+                    This helps decouple classes and allow them to call each other in a way that allows extensions rather than hardcoded dependencies.<br><br><br>
+                    An example of this in our calculator program is with the Calculation class and its Addition, Subtraction, Multiplication, and Division subclasses in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculations/__init__.py</a>.<br><br>
+                    The Calculation class acts as an abstract base class that is not coupled with its operation subclasses. In other words, each Calculation does not <i>have</i> to be an addition class (or any other operation).<br><br>
+                    We can call the operation subclasses in a way that extend the Calculation class, depending on the abstract parent class rather than a concrete one.<br><br>
+                </p><br><br>
+            </div>
+            <div class="col">
+                <br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/calculations.png') }}"
+                            class="w-30" width="120%"
+                            alt="calculations">
+                <br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/open-closed-principle.jpeg') }}"
+                        class="w-30" width="90%"
+                        alt="open-closed-principle">
+                <br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/interface-segregation.png') }}"
+                        class="w-30" width="90%"
+                        alt="interface-segregation">
+                <br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/dependency-inversion.png') }}"
+                        class="w-30" width="90%"
+                        alt="dependency-inversion">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h4><b>OVERVIEW OF DESIGN PATTERNS</b></h4>
+                <p>
+                    When you take the properties of OOP and combine it with SOLID, the result becomes design patterns.<br><br>
+                    Design patterns are established, consistent industry standard ways of doing 23 of the most common actions a program needs to do in OOP. <br><br>
+                    They help each programmer's solutions to look alike to more easily be able to pick up and work on someone else's code.<br><br>
+                    Some of the design patterns we use in our calculator include: <b>facade, factory, command, and decorators</b>.<br><br>
+                </p>
+                <h5><b>Facade</b></h5><br>
+                <p>
+                    A facade pattern is accomplished when a program takes its separate classes and wraps them to cover up their separate nature so that it looks to the end user that the program is one cohesive program.<br><br>
+                    Facades cover up the tons of classes and code inside the program to make it look simpler to the user much like how a house covers its wood and insulation.<br><br><br>
+                    Our calculator program proves to be a good example of using this pattern as it uses the simple <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/__init__.py">Calculator class</a> to cover up all the functions that actually do the operations.<br><br>
+                    <img src="{{ url_for('static', filename='images/calculator_class.png') }}"
+                        class="w-30" width="50%"
+                        alt="calculator_class"><br><br>
+                    Just looking at the calculator class itself, the end user cannot see all the methods used in for calculating in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>.<br><br>
+                    All the behind-the-scenes code is abstracted into a cover Calculator class facade.
+                </p>
+                <h5><b>Factory</b></h5><br>
+                <p>
+                    A factory pattern's purpose is to create and return an instance of a class.<br>
+                    It is a more standardized way of instantiating an object.<br><br>
+                    An example of the factory pattern in use in our program is the <code>create()</code> method in the <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">Calculation class</a>.<br><br>
+                    <img src="{{ url_for('static', filename='images/create_method.png') }}"
+                        class="w-30" width="50%"
+                        alt="create_method"><br><br>
+                    The create method creates an instance/object of whatever type of calculation you are trying to get.<br><br>
+                    It's single responsibility is to create and return an instance of the Calculation class, following the SRP.<br><br>
+                </p>
+                <h5><b>Command</b></h5><br>
+                <p>
+                    The command pattern allows the program to invoke specific methods for specific objects.<br>
+                    This allows the program to have less 'if' statements, making it more streamlined and work more efficiently.<br><br>
+                    In our calculator program, we use the command pattern when we create Addition, Subtraction, Multiplication, and Division classes that each have their specific commands for their operations.<br><br>
+                    We send commands to the calculator history in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/history/__init__.py">history/__init__.py</a> to execute the specific method for the specific operation we call on.<br><br>
+                    <img src="{{ url_for('static', filename='images/command_pattern_history.png') }}"
+                        class="w-30" width="70%"
+                        alt="command_pattern_history.png"><br><br>
+                    Each time we call one of these methods, it goes through the command chain of following through with the specific operation we called for.<br><br>
+                </p>
+                <h5><b>Decorators</b></h5><br>
+                <p>
+                    Decorators are a structural pattern that allow object to have a new functionality added to them by putting them inside special wrappers.<br><br>
+                    An example of a decorator in our calculator program is <code>@pytest.fixture</code> in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/tests/history_test.py">history_test.py</a>.<br><br>
+                    <img src="{{ url_for('static', filename='images/history_test.png') }}"
+                        class="w-30" width="70%"
+                        alt="history_test.png"><br><br>
+                    When we decorate the <code>clear_history()</code> method, it allows pytest to use it in a particular way.<br><br>
+                    In this case, we can use it to clear the history by passing it into the parameters of other test functions to have the history cleared before testing to start with a clean slate.<br><br>
+                    Decorators allow us to add extra functionality on top the methods in our program.<br><br>
+                </p><br>
+                You can learn more about all the design patterns by clicking below:<br>
+                <a class="btn btn-primary"
+                   href="https://refactoring.guru/design-patterns/catalog"
+                   role="button">Learn
+                    more
+                </a>
+                <br><br><br><br><br>
+            </div>
+            <div class="col">
+                <br><br><br>
+                <img src="{{ url_for('static', filename='images/design-patterns.jpg') }}"
+                    class="w-30" width="110%"
+                    alt="design-patterns">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/facade.png') }}"
+                    class="w-30" width="100%"
+                    alt="facade">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/factory.png') }}"
+                    class="w-30" width="100%"
+                    alt="factory">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/command.jpg') }}"
+                    class="w-30" width="100%"
+                    alt="command">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <img src="{{ url_for('static', filename='images/decorator.jpg') }}"
+                    class="w-30" width="100%"
+                    alt="decorator">
+            </div>
+        </div>
+    </small>
+{% endblock %}

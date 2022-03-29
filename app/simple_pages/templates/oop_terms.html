@@ -301,7 +301,7 @@
                 <p>
                     Abstraction is the concept of hiding the internal implementations of a process or method from the user.<br>
                     We see abstraction in action in our <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/__init__.py">calculator</a> class with the <code>add()</code>, <code>subtract()</code>, <code>multiply()</code>, and <code>divide()</code> methods.<br><br>
-                    The actual code and methods that do the calculating are hidden in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculation/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>.<br><br>
+                    The actual code and methods that do the calculating are hidden in <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/calculations/__init__.py">calculation/__init__.py</a> and <a href="https://github.com/tlr24/IS601-docker-flask/blob/master/calculator/operations/__init__.py">operations/__init__.py</a>.<br><br>
                     This simplifies the job of the user by allowing them only to call <code>add()</code> from the calculator interface to do their operations.<br><br>
                     To see examples and learn more about abstraction, please refer to the <a href="/oopprinciples">OOP Principles</a> article.<br><br>
                 </p><br><br>
@@ -318,6 +318,7 @@
                 <p>
                     While object-oriented programming is defined by encapsulation, polymorphism, inheritance, and abstraction, SOLID acts as the rules for OOP.<br><br>
                     SOLID mainly consists of 5 object-oriented design principles including: Single-Responsibility Principle, Open-Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle.<br><br>
+                    To see examples and learn more about SOLID, please refer to the <a href="/solid">SOLID</a> article.<br><br>
                 </p>
                 <br><br>
                 <h5><b>Single-Responsibility Principle</b></h5>
@@ -327,7 +328,7 @@
                 </p>
                 <h5><b>Open-Closed Principle</b></h5>
                 <p>
-                    The Single-Responsibility Principle states that a function should be open for extension but closed for modification.<br><br>
+                    The Open-Closed Principle states that a function should be open for extension but closed for modification.<br><br>
                     Once a function is finished, you shouldn’t need to go back and change it for any reason. You can modify how it works by adding to it externally but the function itself shouldn’t need to be changed.<br><br>
                 </p>
                 <h5><b>Liskov Substitution Principle</b></h5>
@@ -360,7 +361,7 @@
             <div class="col-8">
                 <h4><b>OVERVIEW OF DESIGN PATTERNS</b></h4>
                 <p>
-                    When you take the properties of OOP and combine it with SOLID, the result becomes design patterns.<br><br>
+                    When you take the properties of OOP and combine them with SOLID, the result becomes design patterns.<br><br>
                     Design patterns are established, consistent industry standard ways of doing 23 of the most common actions a program needs to do in OOP. <br><br>
                     They help each programmer's solutions to look alike to more easily be able to pick up and work on someone else's code.<br><br>
                     Some of the design patterns we use in our calculator include: facade, factory, command, and decorators.<br><br>
