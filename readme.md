@@ -9,7 +9,7 @@
 
 * [Developmental Deployment](https://tlr24-dev.herokuapp.com/)
 
-###Pytest/Pylint/Coverage
+### Pytest/Pylint/Coverage
 
 ![pytest_pass](app/static/images/pytest_pass.png)
 
